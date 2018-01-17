@@ -1,6 +1,6 @@
 {
-  "name": "rescape-helpers",
-  "version": "1.1.5",
+  "name": "rescape-sample-data",
+  "version": "1.1.0",
   "description": "React NPM library starter kit based on Facebook's create react app",
   "main": "build/index.js",
   "scripts": {
@@ -24,27 +24,16 @@
   "homepage": "https://github.com/udiliaInc/create-react-library#readme",
   "license": "MIT",
   "dependencies": {
-    "@turf/bbox": "^5.1.5",
-    "@turf/bbox-polygon": "^5.1.5",
-    "@turf/center": "^5.1.5",
-    "apollo-client-preset": "^1.0.6",
-    "d3-sankey": "^0.7.1",
-    "data.either": "^1.5.1",
-    "enzyme": "^3.3.0",
-    "enzyme-to-json": "^3.3.0",
     "graphql": "^0.12.3",
     "graphql-geojson": "^1.0.0",
     "graphql-tools": "^2.18.0",
     "immutable": "^3.8.2",
-    "memoize-immutable": "^3.0.0",
     "moment": "^2.20.1",
-    "moment-duration-format": "^2.2.0",
     "numeral": "^2.0.6",
     "ramda": "^0.25.0",
-    "rebass": "^1.0.4",
-    "rescape-ramda": "^1.2.10",
-    "rescape-validate": "^1.2.3",
-    "reselect": "^3.0.1"
+    "ramda-lens": "^0.1.2",
+    "rescape-helpers": "^1.1.7",
+    "styled-components": "^2.4.0"
   },
   "devDependencies": {
     "autoprefixer": "7.1.6",
