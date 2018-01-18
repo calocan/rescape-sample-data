@@ -10,5 +10,5 @@
  */
 
 export {userTemplateKeys, permissions} from './defaultUsers';
-export {defaultConfig} from './defaultConfig';
+export {defaultConfig as default} from './defaultConfig';
 
