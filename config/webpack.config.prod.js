@@ -52,7 +52,10 @@ module.exports = {
   // You can exclude the *.map files from the build during deployment.
   devtool: shouldUseSourceMap ? 'source-map' : false,
   // In production, we only want to load the app code.
-  entry: [paths.appLibIndexJs], // CRL: library index file instead of app index
+  entry: {
+    vendor: ['ansi-styles'],
+    app: paths.appLibIndexJs
+  }, // CRL: library index file instead of app index
   output: {
     // CRL: Updated whole block with library specific info
     path: paths.appBuild,
@@ -225,10 +228,10 @@ module.exports = {
     // It is absolutely essential that NODE_ENV was set to production here.
     // Otherwise React will be compiled in the very slow development mode.
     new webpack.DefinePlugin(env.stringified),
+    new webpack.optimize.CommonsChunkPlugin({name: "vendor", filename: "vendor.bundle.js"}),
     // Minify the code.
-    // TODO disabling because 	./node_modules/ansi-styles/index.js:4  doesn't minify
-    /*
     new webpack.optimize.UglifyJsPlugin({
+      test: /(vendor.bundle.js\.js)+/i,
       compress: {
         warnings: false,
         // Disabled because of an issue with Uglify breaking seemingly valid code:
@@ -248,7 +251,6 @@ module.exports = {
       },
       sourceMap: shouldUseSourceMap,
     }),
-    */
     // Note: this won't work without ExtractTextPlugin.extract(..) in `loaders`.
     new ExtractTextPlugin({
       filename: cssFilename,

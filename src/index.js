@@ -11,7 +11,7 @@
 
 export {default as belgiumConfig} from './data/belgium'
 export {default as californiaConfig} from './data/california'
-export {default as currentConfig, currentConfigResolver} from './data/current'
+export {default as getCurrentConfig, currentConfigResolver} from './data/current'
 export {default as defaultConfig, userTemplateKeys, permissions} from './data/default'
 export {default as sampleConfig} from './data/samples'
 export {default as createInitialState} from './data/initialState'
