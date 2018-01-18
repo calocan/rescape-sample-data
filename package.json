@@ -24,9 +24,6 @@
   "homepage": "https://github.com/calocan/resacape-sample-data",
   "license": "MIT",
   "dependencies": {
-    "babel-preset-env": "^1.6.1",
-    "eslint-config-react-app": "^2.1.0",
-    "eslint-plugin-react": "^7.5.1",
     "graphql": "^0.12.3",
     "graphql-geojson": "^1.0.0",
     "graphql-tools": "^2.18.0",
@@ -35,7 +32,6 @@
     "numeral": "^2.0.6",
     "ramda": "^0.25.0",
     "ramda-lens": "^0.1.2",
-    "react-dev-utils": "^5.0.0",
     "rescape-helpers": "^1.1.7",
     "styled-components": "^2.4.0"
   },
@@ -45,6 +41,7 @@
     "babel-eslint": "7.2.3",
     "babel-jest": "20.0.3",
     "babel-loader": "7.1.2",
+    "babel-preset-react-app": "^3.1.0",
     "babel-runtime": "6.26.0",
     "case-sensitive-paths-webpack-plugin": "2.1.1",
     "chalk": "1.1.3",
@@ -52,10 +49,12 @@
     "css-loader": "0.28.7",
     "dotenv": "4.0.0",
     "eslint": "4.10.0",
+    "eslint-config-react-app": "^2.0.1",
     "eslint-loader": "1.9.0",
     "eslint-plugin-flowtype": "2.39.1",
     "eslint-plugin-import": "2.8.0",
     "eslint-plugin-jsx-a11y": "5.1.1",
+    "eslint-plugin-react": "7.4.0",
     "extract-text-webpack-plugin": "3.0.2",
     "file-loader": "1.1.5",
     "fs-extra": "3.0.1",
@@ -66,6 +65,9 @@
     "postcss-loader": "2.0.8",
     "promise": "8.0.1",
     "raf": "3.4.0",
+    "react": "^16.2.0",
+    "react-dev-utils": "^4.2.1",
+    "react-dom": "^16.2.0",
     "style-loader": "0.19.0",
     "sw-precache-webpack-plugin": "0.11.4",
     "url-loader": "0.6.2",
@@ -74,7 +76,10 @@
     "webpack-manifest-plugin": "1.3.2",
     "whatwg-fetch": "2.0.3"
   },
-  "peerDependencies": {},
+  "peerDependencies": {
+    "react": ">=0.14",
+    "react-dom": ">=0.14"
+  },
   "jest": {
     "modulePaths": [
       "<rootDir>/src"
@@ -99,7 +104,9 @@
     "transformIgnorePatterns": [
       "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs)$"
     ],
-    "moduleNameMapper": {},
+    "moduleNameMapper": {
+      "^react-native$": "react-native-web"
+    },
     "moduleFileExtensions": [
       "web.js",
       "mjs",
@@ -112,7 +119,7 @@
   },
   "babel": {
     "presets": [
-      "env"
+      "react-app"
     ]
   },
   "eslintConfig": {
