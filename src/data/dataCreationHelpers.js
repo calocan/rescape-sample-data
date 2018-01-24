@@ -12,9 +12,7 @@
 import * as R from 'ramda';
 import moment from 'moment';
 
-import {fromImmutable} from 'rescape-helpers';
-import {toTimeString} from 'rescape-helpers';
-import {calculateDistance} from 'rescape-helpers';
+import {fromImmutable, toTimeString, calculateDistance} from 'rescape-helpers';
 const { capitalize, compact, compactJoin, emptyToNull, idOrIdFromObj, reduceWithNext } = require('rescape-ramda');
 
 // Direction ids for typical Trip pairs

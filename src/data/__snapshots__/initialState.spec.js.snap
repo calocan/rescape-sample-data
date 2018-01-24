@@ -8,6 +8,7 @@ Object {
   },
   "regions": Object {
     "oakland": Object {
+      "description": "Hella Oaklandish",
       "geojson": Object {
         "locations": Array [
           Object {
@@ -1059,7 +1060,9 @@ Object {
               ],
               "startDate": undefined,
             },
-            "stopTimes":  {},
+            "stopTimes": GeneratorFunctionPrototype {
+              "_invoke": [Function],
+            },
             "tripHeadsign": "Reno",
           },
           Object {
@@ -1098,7 +1101,9 @@ Object {
               ],
               "startDate": undefined,
             },
-            "stopTimes":  {},
+            "stopTimes": GeneratorFunctionPrototype {
+              "_invoke": [Function],
+            },
             "tripHeadsign": "San Francisco",
           },
           Object {
@@ -1137,7 +1142,9 @@ Object {
               ],
               "startDate": undefined,
             },
-            "stopTimes":  {},
+            "stopTimes": GeneratorFunctionPrototype {
+              "_invoke": [Function],
+            },
             "tripHeadsign": "Reno",
           },
           Object {
@@ -1176,7 +1183,9 @@ Object {
               ],
               "startDate": undefined,
             },
-            "stopTimes":  {},
+            "stopTimes": GeneratorFunctionPrototype {
+              "_invoke": [Function],
+            },
             "tripHeadsign": "San Francisco",
           },
         ],
@@ -1186,9 +1195,11 @@ Object {
         "iconAtlas": "data/location-icon-atlas.png",
         "mapStyle": "mapbox://styles/mapbox/streets-v8",
         "mapboxApiAccessToken": "pk.eyJ1IjoiY2Fsb2NhbiIsImEiOiJjaXl1aXkxZjkwMG15MndxbmkxMHczNG50In0.07Zu3XXYijL6GJMuxFtvQg",
+        "preventStyleDiffing": false,
         "showCluster": "true",
+        "showZoomControls": true,
         "viewport": Immutable.Map {
-          "pitch": 40,
+          "pitch": 0,
           "bearing": 0,
           "startDragLngLat": null,
           "isDragging": false,
@@ -1197,6 +1208,7 @@ Object {
           "zoom": 5,
         },
       },
+      "name": "Oakland",
       "travel": Object {
         "journeys": Object {
           "current": "1487635143780",
@@ -1252,6 +1264,7 @@ Object {
       },
     },
     "paris": Object {
+      "description": "C'est la ville la plus fameuse",
       "geojson": Object {
         "locations": Array [
           Object {
@@ -2303,7 +2316,9 @@ Object {
               ],
               "startDate": undefined,
             },
-            "stopTimes":  {},
+            "stopTimes": GeneratorFunctionPrototype {
+              "_invoke": [Function],
+            },
             "tripHeadsign": "Reno",
           },
           Object {
@@ -2342,7 +2357,9 @@ Object {
               ],
               "startDate": undefined,
             },
-            "stopTimes":  {},
+            "stopTimes": GeneratorFunctionPrototype {
+              "_invoke": [Function],
+            },
             "tripHeadsign": "San Francisco",
           },
           Object {
@@ -2381,7 +2398,9 @@ Object {
               ],
               "startDate": undefined,
             },
-            "stopTimes":  {},
+            "stopTimes": GeneratorFunctionPrototype {
+              "_invoke": [Function],
+            },
             "tripHeadsign": "Reno",
           },
           Object {
@@ -2420,7 +2439,9 @@ Object {
               ],
               "startDate": undefined,
             },
-            "stopTimes":  {},
+            "stopTimes": GeneratorFunctionPrototype {
+              "_invoke": [Function],
+            },
             "tripHeadsign": "San Francisco",
           },
         ],
@@ -2430,9 +2451,11 @@ Object {
         "iconAtlas": "data/location-icon-atlas.png",
         "mapStyle": "mapbox://styles/mapbox/streets-v8",
         "mapboxApiAccessToken": "pk.eyJ1IjoiY2Fsb2NhbiIsImEiOiJjaXl1aXkxZjkwMG15MndxbmkxMHczNG50In0.07Zu3XXYijL6GJMuxFtvQg",
+        "preventStyleDiffing": false,
         "showCluster": "true",
+        "showZoomControls": true,
         "viewport": Immutable.Map {
-          "pitch": 40,
+          "pitch": 0,
           "bearing": 0,
           "startDragLngLat": null,
           "isDragging": false,
@@ -2441,6 +2464,7 @@ Object {
           "zoom": 5,
         },
       },
+      "name": "Paris",
       "travel": Object {
         "journeys": Object {
           "current": "1487635143780",
@@ -2503,29 +2527,38 @@ Object {
       "protocol": "http",
       "root": "/graphql/",
     },
+    "cycle": Object {
+      "drivers": Object {
+        "api": "HTTP",
+      },
+    },
     "domain": "localhost",
+    "graphcool": Object {
+      "authTokenKey": "graphcool-auth-token",
+      "linksPerPage": 5,
+      "serviceIdKey": "cjajyycub38710185wt87zsm8",
+      "userId": "graphcool-user-id",
+    },
     "mapbox": Object {
       "iconAtlas": "data/location-icon-atlas.png",
       "mapboxApiAccessToken": "pk.eyJ1IjoiY2Fsb2NhbiIsImEiOiJjaXl1aXkxZjkwMG15MndxbmkxMHczNG50In0.07Zu3XXYijL6GJMuxFtvQg",
+      "preventStyleDiffing": false,
       "showCluster": "true",
+      "showZoomControls": true,
+    },
+    "markers": Object {},
+    "overpass": Object {
+      "cellSize": 100,
+      "sleepBetweenCalls": 1000,
     },
   },
   "styles": Object {
     "default": Object {
       "MozAppearance": "none",
       "WebkitAppearance": "none",
-      "backgroundColor": "blue",
-      "border": 0,
-      "color": "white",
-      "display": "inline-block",
+      "color": "black",
       "fontFamily": "inherit",
       "fontSize": "inherit",
-      "fontWeight": "bold",
-      "margin": 0,
-      "paddingBottom": 8,
-      "paddingLeft": 16,
-      "paddingRight": 16,
-      "paddingTop": 8,
       "textDecoration": "none",
     },
   },

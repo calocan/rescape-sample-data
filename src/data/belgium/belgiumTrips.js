@@ -10,24 +10,6 @@
  */
 
 /**
- * Creates default TripPair objects
- */
-
-import stops from './belgiumStops'
-import w from './belgiumStops'
-import routes from './belgiumRoutes'
-import {createTripWithStopTimesPair, orderStops, stopTimeGenerator} from 'data/dataCreationHelpers';
-import {stopResolver, routeResolver} from 'data/dataQueryHelpers';
-import places from './belgiumPlaces';
-import * as regions from './belgiumRegions';
-import {DEFAULT_SERVICE} from 'data/default/services';
-import * as R from 'ramda';
-
-const resolveStop = stopResolver(stops);
-const resolveRoute = routeResolver(routes);
-
-
-/**
  * Creates a TripPair and then augments each trip with the StopTimes
  */
 export default []

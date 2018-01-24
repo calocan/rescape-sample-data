@@ -38,7 +38,7 @@ describe('mockExecutableSchema', () => {
         R.view(schemaRegionLens, result)
     )
     expect(regions).toEqual(
-      R.view(sampleRegionLens, sampleConfig)
+      R.map(R.pick(['id']), R.values(R.view(sampleRegionLens, sampleConfig)))
     );
   });
 });
