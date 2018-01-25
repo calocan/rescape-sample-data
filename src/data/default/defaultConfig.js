@@ -14,7 +14,6 @@ import * as routeTypes from './routeTypes';
 import {DEFAULT_SERVICE, WEEKEND_SERVICE} from './services';
 import {mergeDeep} from 'rescape-ramda';
 import {users} from './defaultUsers';
-import {defaultStyles} from 'styles/styles';
 
 const environment = R.propOr('development', 'NODE_ENV', process.env);
 const {environmentConfig} = require(`environments/${environment}Config`);
@@ -54,6 +53,6 @@ export const defaultConfig = mergeDeep(environmentConfig, {
   // Style data
   styles: {
     // Defaults can be merged with container props and props defined on the component
-    default: defaultStyles
+    default: {}
   }
 });

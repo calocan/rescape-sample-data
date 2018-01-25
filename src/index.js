@@ -16,4 +16,3 @@ export {default as defaultConfig, userTemplateKeys, permissions} from './data/de
 export {default as sampleConfig} from './data/samples'
 export {default as createInitialState} from './data/initialState'
 export {default as createSchema} from './schema/schema'
-export {defaultStyles} from './styles/styles'
