@@ -2553,14 +2553,7 @@ Object {
     },
   },
   "styles": Object {
-    "default": Object {
-      "MozAppearance": "none",
-      "WebkitAppearance": "none",
-      "color": "black",
-      "fontFamily": "inherit",
-      "fontSize": "inherit",
-      "textDecoration": "none",
-    },
+    "default": Object {},
   },
   "users": Object {
     "app_admin": Object {
