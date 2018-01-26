@@ -10,7 +10,7 @@
  */
 
 import {createSimpleResolvedSchema, createSelectorResolvedSchema} from './simpleResolvers';
-import {sampleConfig} from 'data/samples/sampleConfig';
+import {createSampleConfig} from 'data/samples/sampleConfig';
 import makeSchema from './schema';
 import {graphql} from 'graphql';
 import * as R from 'ramda';
@@ -19,7 +19,7 @@ import {mapped} from 'ramda-lens'
 
 describe('mockExecutableSchema', () => {
   test('createSimpleResolvedSchema', async () => {
-    const resolvedSchema = createSimpleResolvedSchema(makeSchema(), sampleConfig);
+    const resolvedSchema = createSimpleResolvedSchema(makeSchema(), createSampleConfig);
     expect(resolvedSchema).toMatchSnapshot();
     const query = `
         query allRegions {
@@ -38,7 +38,7 @@ describe('mockExecutableSchema', () => {
         R.view(schemaRegionLens, result)
     )
     expect(regions).toEqual(
-      R.map(R.pick(['id']), R.values(R.view(sampleRegionLens, sampleConfig)))
+      R.map(R.pick(['id']), R.values(R.view(sampleRegionLens, createSampleConfig)))
     );
   });
 });

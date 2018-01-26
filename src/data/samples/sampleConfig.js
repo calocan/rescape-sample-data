@@ -10,32 +10,41 @@
  */
 
 import * as R from 'ramda';
-import {globalSampleConfig} from './global-sample/globalSampleConfig';
-import {oaklandSampleConfig} from './oakland-sample/oaklandSampleConfig';
-import {parisSampleConfig} from './paris-sample/parisSampleConfig';
+import {environmentConfig} from 'environments/testConfig';
+import {createGlobalSampleConfig} from './global-sample/globalSampleConfig';
+import {createOaklandSampleConfig} from './oakland-sample/oaklandSampleConfig';
+import {createParisSampleConfig} from './paris-sample/parisSampleConfig';
 import {mergeDeepAll} from 'rescape-ramda';
 import {defaultConfig} from 'data/default/defaultConfig';
 import {firstUserLens} from 'rescape-helpers';
 
 // Merge the global and regional sampleConfigs
-export const sampleConfig = mergeDeepAll([
-  {
-    // Any settings that aren't Region specific.
-    styles: defaultConfig.styles,
-    // Any browser settings that would normally be set externally by the browser
-    browser: {
-      width: 1080,
-      height: 720
-    }
-  },
-  globalSampleConfig,
-  // Oakland Region
-  // Make the first user active
-  R.over(
-    firstUserLens(oaklandSampleConfig),
-    R.merge({isActive: true}),
-    oaklandSampleConfig
-  ),
-  // Paris Region
-  parisSampleConfig
-]);
+/**
+ * Creates a sampleConfig with the given environment config
+ * @param {Object} config Defaults to environments/testConfig
+ * @return {Object} A complete sample config
+ */
+export const createSampleConfig = (config = environmentConfig) => {
+  const oaklandConfig = createOaklandSampleConfig(config)
+  return mergeDeepAll([
+    {
+      // Any settings that aren't Region specific.
+      styles: defaultConfig.styles,
+      // Any browser settings that would normally be set externally by the browser
+      browser: {
+        width: 1080,
+        height: 720
+      }
+    },
+    createGlobalSampleConfig(config),
+    // Oakland Region
+    // Make the first user active
+    R.over(
+      firstUserLens(oaklandConfig),
+      R.merge({isActive: true}),
+      oaklandConfig
+    ),
+    // Paris Region
+    createParisSampleConfig(config)
+  ]);
+}

@@ -15,7 +15,12 @@ import users from './oaklandUsers.sample'
 import * as R from 'ramda';
 import {applyRegionsToUsers} from 'rescape-helpers';
 
-export const oaklandSampleConfig = R.merge(environmentConfig, {
+/**
+ * Creates a sample config for Oakland from the given config
+ * @param {Object} config Defaults to environments/testConfig. Contains general values
+ * @return {Object} The sample config for Oakland
+ */
+export const createOaklandSampleConfig = (config = environmentConfig) => R.merge(config, {
   regions,
   // Give each users all regions for simplicity
   users: applyRegionsToUsers(regions, users)

@@ -10,10 +10,10 @@
  */
 
 import createInitialState from './initialState'
-import {sampleConfig} from 'data/samples/sampleConfig';
+import {createSampleConfig} from 'data/samples/sampleConfig';
 
 describe('Initial State', () => {
   test('matches the current configuration', () => {
-    expect(createInitialState(sampleConfig)).toMatchSnapshot();
+    expect(createInitialState(createSampleConfig)).toMatchSnapshot();
   });
 });

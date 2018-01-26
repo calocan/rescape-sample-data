@@ -13,8 +13,12 @@ import {environmentConfig} from 'environments/testConfig';
 import users from './globalUsers.sample'
 import * as R from 'ramda';
 
-// globalSampleConfig just defines a global admin that isn't region specific
-export const globalSampleConfig = R.merge(environmentConfig, {
+/**
+ * Adds sample admin user to the given config
+ * @param config
+ * @return {*}
+ */
+export const createGlobalSampleConfig = (config = environmentConfig) => R.merge(config, {
   // Any user here must be an admin that doesn't have specific regions assigned
   // TODO we'll need some way to indicate admins can access anything
   users: users

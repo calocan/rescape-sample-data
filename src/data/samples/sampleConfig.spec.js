@@ -9,14 +9,14 @@
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 import * as R from 'ramda';
-import {sampleConfig} from './sampleConfig';
+import {createSampleConfig} from './sampleConfig';
 
 describe('config', () => {
     test('Contains merged configs', () => {
-        expect(R.length(R.keys(sampleConfig.regions))).toEqual(2);
+        expect(R.length(R.keys(createSampleConfig.regions))).toEqual(2);
         // 3 users per region plus the admin
-        expect(R.length(R.keys(sampleConfig.users))).toEqual(7);
+        expect(R.length(R.keys(createSampleConfig.users))).toEqual(7);
         // Make sure settings is in there
-        expect(R.keys(R.pick(['mapbox', 'domain', 'api'], sampleConfig.settings))).toEqual(['mapbox', 'domain', 'api']);
+        expect(R.keys(R.pick(['mapbox', 'domain', 'api'], createSampleConfig.settings))).toEqual(['mapbox', 'domain', 'api']);
     });
 });
