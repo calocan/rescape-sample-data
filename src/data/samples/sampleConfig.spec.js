@@ -12,11 +12,12 @@ import * as R from 'ramda';
 import {createSampleConfig} from './sampleConfig';
 
 describe('config', () => {
+    const sampleConfig = createSampleConfig()
     test('Contains merged configs', () => {
-        expect(R.length(R.keys(createSampleConfig.regions))).toEqual(2);
+        expect(R.length(R.keys(sampleConfig.regions))).toEqual(2);
         // 3 users per region plus the admin
-        expect(R.length(R.keys(createSampleConfig.users))).toEqual(7);
+        expect(R.length(R.keys(sampleConfig.users))).toEqual(7);
         // Make sure settings is in there
-        expect(R.keys(R.pick(['mapbox', 'domain', 'api'], createSampleConfig.settings))).toEqual(['mapbox', 'domain', 'api']);
+        expect(R.keys(R.pick(['mapbox', 'domain', 'api'], sampleConfig.settings))).toEqual(['mapbox', 'domain', 'api']);
     });
 });

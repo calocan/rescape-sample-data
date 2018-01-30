@@ -14,6 +14,6 @@ import {createSampleConfig} from 'data/samples/sampleConfig';
 
 describe('Initial State', () => {
   test('matches the current configuration', () => {
-    expect(createInitialState(createSampleConfig)).toMatchSnapshot();
+    expect(createInitialState(createSampleConfig())).toMatchSnapshot();
   });
 });

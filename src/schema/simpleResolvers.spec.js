@@ -17,8 +17,9 @@ import * as R from 'ramda';
 import {mapped} from 'ramda-lens'
 
 describe('mockExecutableSchema', () => {
+  const sampleConfig = createSampleConfig()
   test('createSimpleResolvedSchema', async () => {
-    const resolvedSchema = createSimpleResolvedSchema(makeSchema(), createSampleConfig);
+    const resolvedSchema = createSimpleResolvedSchema(makeSchema(), sampleConfig);
     expect(resolvedSchema).toMatchSnapshot();
     const query = `
         query allRegions {
@@ -33,11 +34,10 @@ describe('mockExecutableSchema', () => {
     const schemaRegionLens = R.compose(R.lensPath(['data', 'store', 'regions'], mapped, R.lensProp('id')))
     const sampleRegionLens = R.compose(R.lensPath(['regions'], mapped, R.lensProp('id')))
     const regions = await graphql(resolvedSchema, query).then(
-      result =>
-        R.view(schemaRegionLens, result)
+      result => R.view(schemaRegionLens, result)
     )
     expect(regions).toEqual(
-      R.map(R.pick(['id']), R.values(R.view(sampleRegionLens, createSampleConfig)))
+      R.map(R.pick(['id']), R.values(R.view(sampleRegionLens, sampleConfig)))
     );
   });
 });

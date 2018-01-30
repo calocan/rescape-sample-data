@@ -21,7 +21,7 @@ const environment = process.env.NODE_ENV;
  */
 export const getCurrentConfig = (env = environment) => R.cond(
   [
-    [R.equals('test'), () => require('data/samples/sampleConfig').createSampleConfig],
+    [R.equals('test'), () => require('data/samples/sampleConfig').createSampleConfig()],
     [R.equals('development'), () => require('data/california/californiaConfig').californiaConfig],
     [R.equals('production'), () => {
  throw new Error('No production environment is implemented');
