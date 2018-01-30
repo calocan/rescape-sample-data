@@ -51,8 +51,8 @@
     "numeral": "^2.0.6",
     "ramda": "^0.25.0",
     "ramda-lens": "^0.1.2",
-    "rescape-helpers": "^1.1.21",
-    "rescape-ramda": "^1.4.14"
+    "rescape-helpers": "^1.1.22",
+    "rescape-ramda": "^1.4.15"
   },
   "devDependencies": {
     "autoprefixer": "7.2.5",

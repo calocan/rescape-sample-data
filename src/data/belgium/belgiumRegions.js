@@ -18,9 +18,8 @@ import {applyDefaultRegion} from 'rescape-helpers';
 import trips from './belgiumTrips'
 import stops from './belgiumStops'
 import osm from './belgiumOsm'
-import {throwing} from 'rescape-ramda'
 import graph from 'data/belgium/brusselsSankeySample';
-const {reqPath} = throwing
+const {reqPath} = 'rescape-ramda'
 
 // merge the default region template with our region(s)
 export default applyDefaultRegion(defaultConfig, {

@@ -18,8 +18,7 @@ import {applyDefaultRegion} from 'rescape-helpers';
 import trips from './oaklandTrips.sample'
 import stops from './oaklandStops.sample'
 import osm from './oaklandOsm.sample'
-import {throwing} from 'rescape-ramda'
-const {reqPath} = throwing;
+import {reqPath} from 'rescape-ramda'
 
 export const NORTH_BAY = 'North-Bay';
 export const ALTAMONT = 'Altamont';
