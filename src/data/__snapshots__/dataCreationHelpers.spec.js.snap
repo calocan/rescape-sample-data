@@ -225,8 +225,8 @@ Array [
         "totalDistance": 0,
       },
       Object {
-        "arrivalTime": "09:13:54",
-        "departureTime": "09:14:54",
+        "arrivalTime": "09:13:55",
+        "departureTime": "09:14:55",
         "stop": Object {
           "id": "OAK-Central",
           "location": Object {
@@ -286,8 +286,8 @@ Array [
         },
       },
       Object {
-        "arrivalTime": "09:54:19",
-        "departureTime": "09:55:19",
+        "arrivalTime": "09:54:21",
+        "departureTime": "09:55:21",
         "stop": Object {
           "id": "SKN-Amtrak",
           "location": Object {
@@ -347,8 +347,8 @@ Array [
         },
       },
       Object {
-        "arrivalTime": "10:26:26",
-        "departureTime": "10:27:26",
+        "arrivalTime": "10:26:29",
+        "departureTime": "10:27:29",
         "stop": Object {
           "id": "SAC-Amtrak",
           "location": Object {
@@ -408,8 +408,8 @@ Array [
         },
       },
       Object {
-        "arrivalTime": "11:46:10",
-        "departureTime": "11:47:10",
+        "arrivalTime": "11:46:12",
+        "departureTime": "11:47:12",
         "stop": Object {
           "id": "TRU-Amtrak",
           "location": Object {
@@ -712,8 +712,8 @@ Array [
         },
       },
       Object {
-        "arrivalTime": "12:17:07",
-        "departureTime": "12:18:07",
+        "arrivalTime": "12:17:08",
+        "departureTime": "12:18:08",
         "stop": Object {
           "id": "SKN-Amtrak",
           "location": Object {
@@ -773,8 +773,8 @@ Array [
         },
       },
       Object {
-        "arrivalTime": "12:34:15",
-        "departureTime": "12:35:15",
+        "arrivalTime": "12:34:09",
+        "departureTime": "12:35:09",
         "stop": Object {
           "id": "OAK-Central",
           "location": Object {
