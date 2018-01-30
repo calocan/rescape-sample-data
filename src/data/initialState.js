@@ -10,7 +10,7 @@
  */
 
 import * as R from 'ramda';
-import {PropTypes} from 'prop-types';
+import PropTypes from 'prop-types';
 import {v} from 'rescape-validate';
 import {Iterable, fromJS} from 'immutable';
 const toImmutable = obj => Iterable.isIterable(obj) ? obj : fromJS(obj);
