@@ -9,10 +9,13 @@
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-export {default as belgiumConfig} from './data/belgium'
-export {default as californiaConfig} from './data/california'
-export {default as getCurrentConfig, currentConfigResolver} from './data/current'
-export {default as defaultConfig, userTemplateKeys, permissions} from './data/default'
-export {default as sampleConfig} from './data/samples'
-export {default as createInitialState} from './data/initialState'
-export {default as createSchema} from './schema/schema'
+import {belgiumConfig} from './data/belgium'
+import {californiaConfig} from './data/california'
+import {getCurrentConfig, currentConfigResolver} from './data/current'
+import {defaultConfig, userTemplateKeys, permissions} from './data/default'
+import {createSampleConfig} from './data/samples'
+import {default as createInitialState} from './data/initialState'
+import {default as createSchema} from './schema/schema'
+export {
+  belgiumConfig, californiaConfig, getCurrentConfig, currentConfigResolver, defaultConfig, userTemplateKeys,
+  permissions, createSampleConfig, createInitialState, createSchema}

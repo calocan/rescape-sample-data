@@ -11,11 +11,22 @@ const config = {
   plugins: [
     json(),
     nodeResolve({
-      jsnext: true
+      preferBuiltins: true,
+      jsnext: true,
+      extensions: [ '.ts', '.js', '.json' ]
     }),
     commonjs({
-      include: 'node_modules/**'
-    }),
+      include: [
+        'node_modules/**'
+      ],
+      exclude: [
+        'node_modules/process-es6/**'
+      ],
+      namedExports: {
+        'node_modules/react/index.js': ['Children', 'Component', 'PropTypes', 'createElement'],
+        'node_modules/react-dom/index.js': ['render']
+      }
+    })
   ]
 };
 
@@ -24,14 +35,14 @@ if (env === 'es' || env === 'cjs') {
   config.external = ['symbol-observable'];
   config.plugins.push(
     babel({
-      exclude: ['node_modules/**']
+      exclude: ['node_modules/**'],
     })
   );
 }
 
 if (env === 'development' || env === 'production') {
   config.output = {format: 'umd'};
-  config.name = 'Umd';
+  config.output.name = 'Umd';
   config.plugins.push(
     babel({
       exclude: 'node_modules/**',
