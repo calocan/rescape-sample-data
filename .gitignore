@@ -4,11 +4,15 @@
 /node_modules
 
 # production
-/build
+/dist
+/es
+/lib
 /demo
+__snapshots__
 
 # testing
 /coverage
+/.idea
 
 # misc
 .DS_Store
