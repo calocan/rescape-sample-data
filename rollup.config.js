@@ -4,16 +4,41 @@ import replace from 'rollup-plugin-replace';
 import uglify from 'rollup-plugin-uglify';
 import json from 'rollup-plugin-json';
 import commonjs from 'rollup-plugin-commonjs';
+import babelrc from 'babelrc-rollup'
+
+const babelConfig = {
+  'presets': [
+    ['env', {
+      'targets': {
+        'browsers': ['last 2 versions']
+      },
+      'loose': true,
+      'modules': false
+    }]
+  ],
+  "plugins": [
+  ]
+};
 
 const env = process.env.NODE_ENV;
 const config = {
   input: 'src/index.js',
   plugins: [
-    json(),
+    json({
+      exclude: 'node_modules/**'
+    }),
+    babel(babelrc({
+      addExternalHelpersPlugin: false,
+      config: babelConfig,
+      exclude: 'node_modules/**'
+    })),
     nodeResolve({
       preferBuiltins: true,
       jsnext: true,
-      extensions: [ '.ts', '.js', '.json' ]
+      extensions: [ '.ts', '.js', '.json' ],
+      customResolveOptions: {
+        moduleDirectory: 'src'
+      }
     }),
     commonjs({
       include: [
@@ -33,21 +58,12 @@ const config = {
 if (env === 'es' || env === 'cjs') {
   config.output = {format: env};
   config.external = ['symbol-observable'];
-  config.plugins.push(
-    babel({
-      exclude: ['node_modules/**'],
-    })
-  );
 }
 
 if (env === 'development' || env === 'production') {
   config.output = {format: 'umd'};
   config.output.name = 'Umd';
   config.plugins.push(
-    babel({
-      exclude: 'node_modules/**',
-      plugins: ['external-helpers']
-    }),
     replace({
       'process.env.NODE_ENV': JSON.stringify(env)
     })

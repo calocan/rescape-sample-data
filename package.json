@@ -11,6 +11,7 @@
     "src"
   ],
   "scripts": {
+    "start": "rollup -c -w",
     "clean": "rimraf lib dist es coverage",
     "lint": "eslint src",
     "test": "cross-env BABEL_ENV=commonjs jest",
@@ -66,6 +67,7 @@
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.6.1",
     "babel-runtime": "6.26.0",
+    "babelrc-rollup": "^3.0.0",
     "case-sensitive-paths-webpack-plugin": "2.1.1",
     "chalk": "2.3.0",
     "copy-webpack-plugin": "^4.3.1",
@@ -151,7 +153,6 @@
           "exclude": [
             "transform-async-to-generator"
           ],
-          "modules": false,
           "loose": true
         }
       ]
@@ -166,18 +167,6 @@
       ]
     ],
     "env": {
-      "commonjs": {
-        "presets": [
-          [
-            "env",
-            {
-              "targets": {
-                "node": "current"
-              }
-            }
-          ]
-        ]
-      },
       "test": {
         "presets": [
           [
