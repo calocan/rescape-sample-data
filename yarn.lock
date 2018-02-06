@@ -2562,9 +2562,9 @@ eslint-visitor-keys@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/eslint-visitor-keys/-/eslint-visitor-keys-1.0.0.tgz#3f3180fb2e291017716acb4c9d6d5b5c34a6a81d"
 
-eslint@4.16.0:
-  version "4.16.0"
-  resolved "https://registry.yarnpkg.com/eslint/-/eslint-4.16.0.tgz#934ada9e98715e1d7bbfd6f6f0519ed2fab35cc1"
+eslint@4.17.0:
+  version "4.17.0"
+  resolved "https://registry.yarnpkg.com/eslint/-/eslint-4.17.0.tgz#dc24bb51ede48df629be7031c71d9dc0ee4f3ddf"
   dependencies:
     ajv "^5.3.0"
     babel-code-frame "^6.22.0"
@@ -3308,6 +3308,15 @@ graphql-tools@^2.19.0:
     apollo-utilities "^1.0.1"
     deprecated-decorator "^0.1.6"
     graphql-subscriptions "^0.5.6"
+    uuid "^3.1.0"
+
+graphql-tools@^2.20.0:
+  version "2.20.0"
+  resolved "https://registry.yarnpkg.com/graphql-tools/-/graphql-tools-2.20.0.tgz#4fa7b0c403115a0b636f685263c6faec5f219a24"
+  dependencies:
+    apollo-link "^1.0.0"
+    apollo-utilities "^1.0.1"
+    deprecated-decorator "^0.1.6"
     uuid "^3.1.0"
 
 graphql@^0.10.0:
@@ -6142,9 +6151,9 @@ requires-port@1.0.x, requires-port@1.x.x, requires-port@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/requires-port/-/requires-port-1.0.0.tgz#925d2601d39ac485e091cf0da5c6e694dc3dcaff"
 
-rescape-helpers@^1.1.24:
-  version "1.1.24"
-  resolved "https://registry.yarnpkg.com/rescape-helpers/-/rescape-helpers-1.1.24.tgz#9e3cd63bd2d1bb50135ff81d5b4a59be4359cf01"
+rescape-helpers@^1.1.25:
+  version "1.1.25"
+  resolved "https://registry.yarnpkg.com/rescape-helpers/-/rescape-helpers-1.1.25.tgz#69e81206cdbf26a17929f70bfefe5b4afe4eb947"
   dependencies:
     "@turf/bbox" "^5.1.5"
     "@turf/bbox-polygon" "^5.1.5"
@@ -6174,7 +6183,7 @@ rescape-helpers@^1.1.24:
     ramda "^0.25.0"
     react-apollo "^2.0.4"
     rebass "^1.0.4"
-    rescape-ramda "^1.4.16"
+    rescape-ramda "^1.4.17"
     rescape-validate "^1.2.5"
     reselect "^3.0.1"
 
@@ -6190,14 +6199,14 @@ rescape-ramda@^1.4.14:
     ramda-maybe "^0.18.0"
     util "^0.10.3"
 
-rescape-ramda@^1.4.16:
-  version "1.4.16"
-  resolved "https://registry.yarnpkg.com/rescape-ramda/-/rescape-ramda-1.4.16.tgz#0395eba748d9fd03bf6a6cf34aecc7a9b9f4b938"
+rescape-ramda@^1.4.17, rescape-ramda@^1.4.22:
+  version "1.4.22"
+  resolved "https://registry.yarnpkg.com/rescape-ramda/-/rescape-ramda-1.4.22.tgz#be3228c622724c8af69588cad4049859c1283202"
   dependencies:
     data.maybe "^1.2.2"
     data.task "^3.1.1"
     fs-extra "^5.0.0"
-    ramda "^0.24.1"
+    ramda "^0.25.0"
     ramda-fantasy "^0.8.0"
     ramda-maybe "^0.18.0"
     util "^0.10.3"
@@ -6338,9 +6347,9 @@ rollup-pluginutils@^2.0.1:
     estree-walker "^0.3.0"
     micromatch "^2.3.11"
 
-rollup@^0.55.1:
-  version "0.55.1"
-  resolved "https://registry.yarnpkg.com/rollup/-/rollup-0.55.1.tgz#baf4f23abe3014b29e56dea7d72d9946e56ac7dd"
+rollup@^0.55.3:
+  version "0.55.3"
+  resolved "https://registry.yarnpkg.com/rollup/-/rollup-0.55.3.tgz#0af082a766d51c3058430c8372442ff5207d8736"
 
 run-async@^2.2.0:
   version "2.3.0"

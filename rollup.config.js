@@ -17,6 +17,7 @@ const babelConfig = {
     }]
   ],
   "plugins": [
+    "transform-runtime"
   ]
 };
 
@@ -30,7 +31,8 @@ const config = {
     babel(babelrc({
       addExternalHelpersPlugin: false,
       config: babelConfig,
-      exclude: 'node_modules/**'
+      exclude: 'node_modules/**',
+      runtimeHelpers: true
     })),
     nodeResolve({
       preferBuiltins: true,
