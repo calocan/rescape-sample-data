@@ -6199,9 +6199,21 @@ rescape-ramda@^1.4.14:
     ramda-maybe "^0.18.0"
     util "^0.10.3"
 
-rescape-ramda@^1.4.17, rescape-ramda@^1.4.22:
+rescape-ramda@^1.4.17:
   version "1.4.22"
   resolved "https://registry.yarnpkg.com/rescape-ramda/-/rescape-ramda-1.4.22.tgz#be3228c622724c8af69588cad4049859c1283202"
+  dependencies:
+    data.maybe "^1.2.2"
+    data.task "^3.1.1"
+    fs-extra "^5.0.0"
+    ramda "^0.25.0"
+    ramda-fantasy "^0.8.0"
+    ramda-maybe "^0.18.0"
+    util "^0.10.3"
+
+rescape-ramda@^1.4.23:
+  version "1.4.23"
+  resolved "https://registry.yarnpkg.com/rescape-ramda/-/rescape-ramda-1.4.23.tgz#f5435c2ada755ea63084e903aeaee14325a9b816"
   dependencies:
     data.maybe "^1.2.2"
     data.task "^3.1.1"
