@@ -17,7 +17,13 @@ const babelConfig = {
     }]
   ],
   "plugins": [
-    "transform-runtime"
+    [
+      "transform-runtime",
+      {
+        "polyfill": false,
+        "regenerator": true
+      }
+    ]
   ]
 };
 
@@ -32,6 +38,7 @@ const config = {
       addExternalHelpersPlugin: false,
       config: babelConfig,
       exclude: 'node_modules/**',
+      externalHelpers: false,
       runtimeHelpers: true
     })),
     nodeResolve({

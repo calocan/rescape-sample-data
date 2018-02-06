@@ -18,7 +18,7 @@ import {applyDefaultRegion} from 'rescape-helpers';
 import trips from './oaklandTrips.sample'
 import stops from './oaklandStops.sample'
 import osm from './oaklandOsm.sample'
-import {reqPath} from 'rescape-ramda'
+import {reqPathThrowing} from 'rescape-ramda'
 
 export const NORTH_BAY = 'North-Bay';
 export const ALTAMONT = 'Altamont';
@@ -34,7 +34,7 @@ export default applyDefaultRegion(defaultConfig, {
     geojson: {
       osm,
       // Make these the osm features for now
-      locations: reqPath(['features'], osm)
+      locations: reqPathThrowing(['features'], osm)
     },
 
     gtfs: {

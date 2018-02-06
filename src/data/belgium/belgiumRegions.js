@@ -19,7 +19,7 @@ import trips from './belgiumTrips'
 import stops from './belgiumStops'
 import osm from './belgiumOsm'
 import graph from 'data/belgium/brusselsSankeySample';
-const {reqPath} = 'rescape-ramda'
+import {reqPathThrowing} from 'rescape-ramda'
 
 // merge the default region template with our region(s)
 export default applyDefaultRegion(defaultConfig, {
@@ -31,7 +31,7 @@ export default applyDefaultRegion(defaultConfig, {
     geojson: {
       osm,
       // Make these the osm features for now
-      locations: reqPath(['features'], osm),
+      locations: reqPathThrowing(['features'], osm),
       sankey: {
         graph
       }
