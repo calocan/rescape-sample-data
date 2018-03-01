@@ -11,6 +11,10 @@
 
 import * as R from 'ramda';
 import {mergeDeep} from 'rescape-ramda';
+// I think rollup lets imports be null if not defined, in case any of these are not included in a production build
+// https://github.com/rollup/rollup/pull/1342
+import {createSampleConfig} from 'data/samples/sampleConfig'
+import {californiaConfig} from 'data/california/californiaConfig'
 const environment = process.env.NODE_ENV;
 
 /**
@@ -21,8 +25,8 @@ const environment = process.env.NODE_ENV;
  */
 export const getCurrentConfig = (env = environment) => R.cond(
   [
-    [R.equals('test'), () => require('data/samples/sampleConfig').createSampleConfig()],
-    [R.equals('development'), () => require('data/california/californiaConfig').californiaConfig],
+    [R.equals('test'), () => createSampleConfig()],
+    [R.equals('development'), () => californiaConfig],
     [R.equals('production'), () => {
  throw new Error('No production environment is implemented');
 }],
