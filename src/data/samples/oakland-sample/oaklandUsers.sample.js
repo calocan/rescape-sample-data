@@ -16,26 +16,26 @@ const {REGION_MANAGER, REGION_USER, REGION_VISITOR} = userTemplateKeys;
 
 // Create three users
 // rename the user templates to match our users
-// ONce merged with the defaults remove the user template keys to make a flat object of users
-export default R.mergeAll(R.values(mapDefaultUsers(defaultConfig,
+// Once merged with the defaults remove the user template keys to make a flat object of users
+export default R.compose(R.mergeAll, R.values, mapDefaultUsers(defaultConfig))(
   {
     [REGION_MANAGER]: {
-      californiaManager: {
-        id: 'californiaManager',
-        name: 'Jerry Brown'
+      oaklandManager: {
+        id: 'oaklandManager',
+        name: 'Libby Schaaf'
       }
     },
     [REGION_USER]: {
-      californiaUser: {
-        id: 'californiaUser',
-        name: 'Nancy Pelosi'
+      oaklandUser: {
+        id: 'oaklandUser',
+        name: 'Ryan Russo'
       }
     },
     [REGION_VISITOR]: {
-      californiaVisitor: {
-        id: 'californiaVisitor',
-        name: 'Angela Merkel'
+      oaklandVisitor: {
+        id: 'oaklandVisitor',
+        name: 'Jeff Tumlin'
       }
     }
   }
-)));
+);

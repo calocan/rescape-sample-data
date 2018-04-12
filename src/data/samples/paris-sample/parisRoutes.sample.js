@@ -11,7 +11,8 @@
 
 import {createRoute} from 'data/dataCreationHelpers';
 import places from './parisPlaces.sample';
-import * as regions from './parisRegions.sample';
+// Cicular
+//import * as regions from './parisRegions.sample';
 import * as routeTypes from 'data/default/routeTypes';
 
 const defaultRouteType = routeTypes.INTER_REGIONAL_RAIL_SERVICE.id;
@@ -20,13 +21,13 @@ export default [
     createRoute(
         places.SAN_FRANCISCO,
         places.RENO,
-        {via: regions.NORTH_BAY,
+        {via: 'NORTH_BAY',
         defaultRouteType}
     ),
     createRoute(
         places.SAN_FRANCISCO,
         places.RENO,
-        {via: regions.ALTAMONT,
+        {via: 'ALTAMONT',
         defaultRouteType}
     ),
     createRoute(

@@ -9,13 +9,11 @@
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-import {belgiumConfig} from './data/belgium'
-import {californiaConfig} from './data/california'
+import {createBelgiumConfig} from './data/belgium'
+import {createCaliforniaConfig} from './data/california'
 import {getCurrentConfig, currentConfigResolver} from './data/current'
 import {defaultConfig, userTemplateKeys, permissions} from './data/default'
 import {createSampleConfig} from './data/samples'
-import {default as createInitialState} from './data/initialState'
-import {default as createSchema} from './schema/schema'
 export {
-  belgiumConfig, californiaConfig, getCurrentConfig, currentConfigResolver, defaultConfig, userTemplateKeys,
-  permissions, createSampleConfig, createInitialState, createSchema}
+  createBelgiumConfig, createCaliforniaConfig, getCurrentConfig, currentConfigResolver, defaultConfig, userTemplateKeys,
+  permissions, createSampleConfig}

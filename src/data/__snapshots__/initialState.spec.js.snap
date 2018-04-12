@@ -840,7 +840,7 @@ Object {
         ],
         "routes": Array [
           Object {
-            "id": "SFC<->REN",
+            "id": "SFC<-NORTH_BAY->REN",
             "places": Object {
               "from": Object {
                 "id": "SFC",
@@ -851,13 +851,13 @@ Object {
                 "label": "Reno",
               },
             },
-            "routeLongName": "San Francisco/Reno",
-            "routeShortName": "SFC<->REN",
+            "routeLongName": "San Francisco/Reno via NORTH_BAY",
+            "routeShortName": "SFC<-NORTH_BAY->REN via NORTH_BAY",
             "routeType": undefined,
-            "via": undefined,
+            "via": "NORTH_BAY",
           },
           Object {
-            "id": "SFC<->REN",
+            "id": "SFC<-ALTAMONT->REN",
             "places": Object {
               "from": Object {
                 "id": "SFC",
@@ -868,10 +868,10 @@ Object {
                 "label": "Reno",
               },
             },
-            "routeLongName": "San Francisco/Reno",
-            "routeShortName": "SFC<->REN",
+            "routeLongName": "San Francisco/Reno via ALTAMONT",
+            "routeShortName": "SFC<-ALTAMONT->REN via ALTAMONT",
             "routeType": undefined,
-            "via": undefined,
+            "via": "ALTAMONT",
           },
           Object {
             "id": "SFC<->LAX",
@@ -1030,9 +1030,9 @@ Object {
               "resolveToStop": [Function],
               "resolveTripSymbol": [Function],
             },
-            "id": "SFC->REN Everyday Yearlong",
+            "id": "SFC->(NORTH_BAY)->REN Everyday Yearlong",
             "route": Object {
-              "id": "SFC<->REN",
+              "id": "SFC<-NORTH_BAY->REN",
               "places": Object {
                 "from": Object {
                   "id": "SFC",
@@ -1043,10 +1043,10 @@ Object {
                   "label": "Reno",
                 },
               },
-              "routeLongName": "San Francisco/Reno",
-              "routeShortName": "SFC<->REN",
+              "routeLongName": "San Francisco/Reno via NORTH_BAY",
+              "routeShortName": "SFC<-NORTH_BAY->REN via NORTH_BAY",
               "routeType": undefined,
-              "via": undefined,
+              "via": "NORTH_BAY",
             },
             "service": Object {
               "days": Array [
@@ -1063,7 +1063,7 @@ Object {
             "stopTimes": GeneratorFunctionPrototype {
               "_invoke": [Function],
             },
-            "tripHeadsign": "Reno",
+            "tripHeadsign": "Reno via NORTH_BAY",
           },
           Object {
             "direction": Object {
@@ -1071,9 +1071,9 @@ Object {
               "resolveToStop": [Function],
               "resolveTripSymbol": [Function],
             },
-            "id": "REN->SFC Everyday Yearlong",
+            "id": "REN->(NORTH_BAY)->SFC Everyday Yearlong",
             "route": Object {
-              "id": "SFC<->REN",
+              "id": "SFC<-NORTH_BAY->REN",
               "places": Object {
                 "from": Object {
                   "id": "SFC",
@@ -1084,10 +1084,10 @@ Object {
                   "label": "Reno",
                 },
               },
-              "routeLongName": "San Francisco/Reno",
-              "routeShortName": "SFC<->REN",
+              "routeLongName": "San Francisco/Reno via NORTH_BAY",
+              "routeShortName": "SFC<-NORTH_BAY->REN via NORTH_BAY",
               "routeType": undefined,
-              "via": undefined,
+              "via": "NORTH_BAY",
             },
             "service": Object {
               "days": Array [
@@ -1104,7 +1104,7 @@ Object {
             "stopTimes": GeneratorFunctionPrototype {
               "_invoke": [Function],
             },
-            "tripHeadsign": "San Francisco",
+            "tripHeadsign": "San Francisco via NORTH_BAY",
           },
           Object {
             "direction": Object {
@@ -1112,9 +1112,9 @@ Object {
               "resolveToStop": [Function],
               "resolveTripSymbol": [Function],
             },
-            "id": "SFC->REN Everyday Yearlong",
+            "id": "SFC->(ALTAMONT)->REN Everyday Yearlong",
             "route": Object {
-              "id": "SFC<->REN",
+              "id": "SFC<-ALTAMONT->REN",
               "places": Object {
                 "from": Object {
                   "id": "SFC",
@@ -1125,10 +1125,10 @@ Object {
                   "label": "Reno",
                 },
               },
-              "routeLongName": "San Francisco/Reno",
-              "routeShortName": "SFC<->REN",
+              "routeLongName": "San Francisco/Reno via ALTAMONT",
+              "routeShortName": "SFC<-ALTAMONT->REN via ALTAMONT",
               "routeType": undefined,
-              "via": undefined,
+              "via": "ALTAMONT",
             },
             "service": Object {
               "days": Array [
@@ -1145,7 +1145,7 @@ Object {
             "stopTimes": GeneratorFunctionPrototype {
               "_invoke": [Function],
             },
-            "tripHeadsign": "Reno",
+            "tripHeadsign": "Reno via ALTAMONT",
           },
           Object {
             "direction": Object {
@@ -1153,9 +1153,9 @@ Object {
               "resolveToStop": [Function],
               "resolveTripSymbol": [Function],
             },
-            "id": "REN->SFC Everyday Yearlong",
+            "id": "REN->(ALTAMONT)->SFC Everyday Yearlong",
             "route": Object {
-              "id": "SFC<->REN",
+              "id": "SFC<-ALTAMONT->REN",
               "places": Object {
                 "from": Object {
                   "id": "SFC",
@@ -1166,10 +1166,10 @@ Object {
                   "label": "Reno",
                 },
               },
-              "routeLongName": "San Francisco/Reno",
-              "routeShortName": "SFC<->REN",
+              "routeLongName": "San Francisco/Reno via ALTAMONT",
+              "routeShortName": "SFC<-ALTAMONT->REN via ALTAMONT",
               "routeType": undefined,
-              "via": undefined,
+              "via": "ALTAMONT",
             },
             "service": Object {
               "days": Array [
@@ -1186,7 +1186,7 @@ Object {
             "stopTimes": GeneratorFunctionPrototype {
               "_invoke": [Function],
             },
-            "tripHeadsign": "San Francisco",
+            "tripHeadsign": "San Francisco via ALTAMONT",
           },
         ],
       },
@@ -2096,7 +2096,7 @@ Object {
         ],
         "routes": Array [
           Object {
-            "id": "SFC<->REN",
+            "id": "SFC<-NORTH_BAY->REN",
             "places": Object {
               "from": Object {
                 "id": "SFC",
@@ -2107,13 +2107,13 @@ Object {
                 "label": "Reno",
               },
             },
-            "routeLongName": "San Francisco/Reno",
-            "routeShortName": "SFC<->REN",
+            "routeLongName": "San Francisco/Reno via NORTH_BAY",
+            "routeShortName": "SFC<-NORTH_BAY->REN via NORTH_BAY",
             "routeType": undefined,
-            "via": undefined,
+            "via": "NORTH_BAY",
           },
           Object {
-            "id": "SFC<->REN",
+            "id": "SFC<-ALTAMONT->REN",
             "places": Object {
               "from": Object {
                 "id": "SFC",
@@ -2124,10 +2124,10 @@ Object {
                 "label": "Reno",
               },
             },
-            "routeLongName": "San Francisco/Reno",
-            "routeShortName": "SFC<->REN",
+            "routeLongName": "San Francisco/Reno via ALTAMONT",
+            "routeShortName": "SFC<-ALTAMONT->REN via ALTAMONT",
             "routeType": undefined,
-            "via": undefined,
+            "via": "ALTAMONT",
           },
           Object {
             "id": "SFC<->LAX",
@@ -2286,9 +2286,9 @@ Object {
               "resolveToStop": [Function],
               "resolveTripSymbol": [Function],
             },
-            "id": "SFC->REN Everyday Yearlong",
+            "id": "SFC->(NORTH_BAY)->REN Everyday Yearlong",
             "route": Object {
-              "id": "SFC<->REN",
+              "id": "SFC<-NORTH_BAY->REN",
               "places": Object {
                 "from": Object {
                   "id": "SFC",
@@ -2299,10 +2299,10 @@ Object {
                   "label": "Reno",
                 },
               },
-              "routeLongName": "San Francisco/Reno",
-              "routeShortName": "SFC<->REN",
+              "routeLongName": "San Francisco/Reno via NORTH_BAY",
+              "routeShortName": "SFC<-NORTH_BAY->REN via NORTH_BAY",
               "routeType": undefined,
-              "via": undefined,
+              "via": "NORTH_BAY",
             },
             "service": Object {
               "days": Array [
@@ -2319,7 +2319,7 @@ Object {
             "stopTimes": GeneratorFunctionPrototype {
               "_invoke": [Function],
             },
-            "tripHeadsign": "Reno",
+            "tripHeadsign": "Reno via NORTH_BAY",
           },
           Object {
             "direction": Object {
@@ -2327,9 +2327,9 @@ Object {
               "resolveToStop": [Function],
               "resolveTripSymbol": [Function],
             },
-            "id": "REN->SFC Everyday Yearlong",
+            "id": "REN->(NORTH_BAY)->SFC Everyday Yearlong",
             "route": Object {
-              "id": "SFC<->REN",
+              "id": "SFC<-NORTH_BAY->REN",
               "places": Object {
                 "from": Object {
                   "id": "SFC",
@@ -2340,10 +2340,10 @@ Object {
                   "label": "Reno",
                 },
               },
-              "routeLongName": "San Francisco/Reno",
-              "routeShortName": "SFC<->REN",
+              "routeLongName": "San Francisco/Reno via NORTH_BAY",
+              "routeShortName": "SFC<-NORTH_BAY->REN via NORTH_BAY",
               "routeType": undefined,
-              "via": undefined,
+              "via": "NORTH_BAY",
             },
             "service": Object {
               "days": Array [
@@ -2360,7 +2360,7 @@ Object {
             "stopTimes": GeneratorFunctionPrototype {
               "_invoke": [Function],
             },
-            "tripHeadsign": "San Francisco",
+            "tripHeadsign": "San Francisco via NORTH_BAY",
           },
           Object {
             "direction": Object {
@@ -2368,9 +2368,9 @@ Object {
               "resolveToStop": [Function],
               "resolveTripSymbol": [Function],
             },
-            "id": "SFC->REN Everyday Yearlong",
+            "id": "SFC->(ALTAMONT)->REN Everyday Yearlong",
             "route": Object {
-              "id": "SFC<->REN",
+              "id": "SFC<-ALTAMONT->REN",
               "places": Object {
                 "from": Object {
                   "id": "SFC",
@@ -2381,10 +2381,10 @@ Object {
                   "label": "Reno",
                 },
               },
-              "routeLongName": "San Francisco/Reno",
-              "routeShortName": "SFC<->REN",
+              "routeLongName": "San Francisco/Reno via ALTAMONT",
+              "routeShortName": "SFC<-ALTAMONT->REN via ALTAMONT",
               "routeType": undefined,
-              "via": undefined,
+              "via": "ALTAMONT",
             },
             "service": Object {
               "days": Array [
@@ -2401,7 +2401,7 @@ Object {
             "stopTimes": GeneratorFunctionPrototype {
               "_invoke": [Function],
             },
-            "tripHeadsign": "Reno",
+            "tripHeadsign": "Reno via ALTAMONT",
           },
           Object {
             "direction": Object {
@@ -2409,9 +2409,9 @@ Object {
               "resolveToStop": [Function],
               "resolveTripSymbol": [Function],
             },
-            "id": "REN->SFC Everyday Yearlong",
+            "id": "REN->(ALTAMONT)->SFC Everyday Yearlong",
             "route": Object {
-              "id": "SFC<->REN",
+              "id": "SFC<-ALTAMONT->REN",
               "places": Object {
                 "from": Object {
                   "id": "SFC",
@@ -2422,10 +2422,10 @@ Object {
                   "label": "Reno",
                 },
               },
-              "routeLongName": "San Francisco/Reno",
-              "routeShortName": "SFC<->REN",
+              "routeLongName": "San Francisco/Reno via ALTAMONT",
+              "routeShortName": "SFC<-ALTAMONT->REN via ALTAMONT",
               "routeType": undefined,
-              "via": undefined,
+              "via": "ALTAMONT",
             },
             "service": Object {
               "days": Array [
@@ -2442,7 +2442,7 @@ Object {
             "stopTimes": GeneratorFunctionPrototype {
               "_invoke": [Function],
             },
-            "tripHeadsign": "San Francisco",
+            "tripHeadsign": "San Francisco via ALTAMONT",
           },
         ],
       },

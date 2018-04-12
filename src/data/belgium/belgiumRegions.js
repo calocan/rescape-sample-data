@@ -18,8 +18,8 @@ import {applyDefaultRegion} from 'rescape-helpers';
 import trips from './belgiumTrips'
 import stops from './belgiumStops'
 import osm from './belgiumOsm'
-import graph from 'data/belgium/brusselsSankeySample';
 import {reqPathThrowing} from 'rescape-ramda'
+import graph, {stages, stageKey, valueKey} from './belgiumSankeySample'
 
 // merge the default region template with our region(s)
 export default applyDefaultRegion(defaultConfig, {
@@ -33,7 +33,10 @@ export default applyDefaultRegion(defaultConfig, {
       // Make these the osm features for now
       locations: reqPathThrowing(['features'], osm),
       sankey: {
-        graph
+        graph,
+        stages,
+        stageKey,
+        valueKey
       }
     },
 

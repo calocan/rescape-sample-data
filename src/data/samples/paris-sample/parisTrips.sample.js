@@ -19,7 +19,8 @@ import routes from './parisRoutes.sample'
 import {createTripWithStopTimesPair, orderStops, stopTimeGenerator} from 'data/dataCreationHelpers';
 import {stopResolver, routeResolver} from 'data/dataQueryHelpers';
 import places from './parisPlaces.sample';
-import * as regions from './parisRegions.sample';
+//Circular
+//import * as regions from './parisRegions.sample';
 import {DEFAULT_SERVICE} from 'data/default/services';
 import * as R from 'ramda';
 
@@ -32,7 +33,7 @@ const resolveRoute = routeResolver(routes);
  */
 export default R.concat(
     createTripWithStopTimesPair(
-        resolveRoute(places.SAN_FRANCISCO, places.RENO, regions.NORTH_BAY),
+        resolveRoute(places.SAN_FRANCISCO, places.RENO, 'NORTH_BAY'),
         DEFAULT_SERVICE,
         trip => {
             return stopTimeGenerator(
@@ -49,7 +50,7 @@ export default R.concat(
         }
     ),
     createTripWithStopTimesPair(
-        resolveRoute(places.SAN_FRANCISCO, places.RENO, regions.ALTAMONT),
+        resolveRoute(places.SAN_FRANCISCO, places.RENO, 'ALTAMONT'),
         DEFAULT_SERVICE,
         trip => {
             return stopTimeGenerator(

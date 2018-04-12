@@ -10,38 +10,23 @@ const columns = [
   'annualTonnage'
 ];
 export const stages = [
-  {key: 'source', name: 'Source', targets:['conversion']},
+  {key: 'source', name: 'Source', targets: ['conversion']},
   {key: 'conversion', name: 'Conversion', targets: ['distribution']},
   {key: 'distribution', name: 'Distribution', targets: ['demand']},
   {key: 'demand', name: 'Demand', targets: ['reconversion', 'sink']},
   {key: 'reconversion', name: 'Reconversion', targets: ['demand']},
   {key: 'sink', name: 'Sink', targets: []}
 ];
-export const linkStages = R.zipWith(
-  (source, target) => ({
-    key: R.join('-', R.map(R.prop('key'), [source, target])),
-    name: R.join(' -> ', R.map(R.prop('name'), [source, target])),
-    source,
-    target
-  }),
-  R.slice(0, -1, stages), R.slice(1, Infinity, stages)
-);
-
 
 const stageByName = mapPropValueAsIndex('name', stages);
-const stageKey = 'junctionStage';
-export const resolveLinkStage = d => d.target[stageKey];
-export const resolveNodeStage = d => d[stageKey];
-// If the location of the node ahs been generalized add it to the name so users know
-// it isn't in an exact location
-export const resolveNodeName = d => `${d.siteName} ${d.isGeneralized ? ' (general location)' : ''}\n${d.annualTonnage} t`
+export const stageKey = 'junctionStage';
 // Used for node and link values
-const valueKey = 'annualTonnage'
+export const valueKey = 'annualTonnage';
 
 const BRUSSELS_LOCATION = [4.3517, 50.8503];
 // Minutely move locations so they don't overlap
-const aberrateLocation = (index, location, factor=.005) =>
-  R.addIndex(R.map)((coord, j) => coord + factor * (index % 2 ? -index : index) * (j || -1))(location)
+const aberrateLocation = (index, location, factor = .005) =>
+  R.addIndex(R.map)((coord, j) => coord + factor * (index % 2 ? -index : index) * (j || -1))(location);
 const aberrateBrusselsLocation = index => aberrateLocation(index, BRUSSELS_LOCATION);
 
 /**
@@ -72,45 +57,45 @@ const groups = [
       'RecyPark South;1190 Forest, Belgium;50.810799, 4.314789;Sink;3,130',
       'RecyPark Nord;Rue du Rupel, 1000 Bruxelles, Belgium;50.880181, 4.377136;Sink;1,162'
     ])
-  },
-/*
-  {
-    material: 'Metals',
-    nodes: createNodes([
-      'Other Global Imports;Shipments, location generalized;51.309933, 3.055030;Source;367,689',
-      'Arcelor Steel Belgium;Lammerdries 10, 2440 Geel, Belgium;51.145051, 4.939373;Conversion;27,872',
-      'Duplex House Typology;Everywhere in Brussels;NA;Demand;3,048',
-      'Apartment Building Typology;Everywhere in Brussels;NA;Demand;18,548',
-      'Residential Buildings (all typologies);Everywhere in Brussels;NA;Demand;75,404',
-      'Metallo Belgium;Nieuwe Dreef 33, 2340 Beerse, Belgium;51.318025, 4.817432;Reconversion;54,000',
-      'Private Sector Collection;Everywhere in Brussels;NA;Sink;96,316',
-      'RecyPark South;1190 Forest, Belgium;50.810799, 4.314789;Sink;101',
-      'RecyPark Nord;Rue du Rupel, 1000 Bruxelles, Belgium;50.880181, 4.377136;Sink;67'
-    ])
-  },
-
-  {
-    material: 'Wood',
-    nodes: createNodes([
-      'Forêt de Soignes;Watermael-Boitsfort Belgium ;50.777072, 4.409960;Source;6,288',
-      'Germany Imports;Germany, nearest point;50.786952, 6.102697;Source;66,812',
-      'Netherlands Imports;Netherlans, nearest point;51.467197, 4.609125;Source;52,352',
-      'Other Global Imports;Shipments, location generalized;51.309933, 3.055030;Source;323,384',
-      'Barthel Pauls Sawmill;Pôle Ardenne Bois 1, 6671 Bovigny, Belgium;50.259872, 5.933474;Conversion;200,430',
-      "Lochten & Germeau;Bd de l’Humanité, 51, 1190 Vorst, Belgium;50.820974, 4.314469;Distribution; NA, only for directional/path",
-      'Duplex House Typology;Everywhere in Brussels;NA;Demand;1,955',
-      'Apartment Building Typology;Everywhere in Brussels;NA;Demand;11,250',
-      'Residential Buildings (all typologies);Everywhere in Brussels;NA;Demand;45,659',
-      'Rotor Deconstruction;Prévinairestraat / Rue Prévinaire 58 1070 Anderlecht;50.839714, 4.352730;Reconversion;15,462',
-      'PAC Uccle;Boulevard de la Deuxième Armée Britannique 625-667 1190 Forest, Belgium;50.801647, 4.305641;Sink;189',
-      'PAC Saint-Josse;Rue Verboeckhaven 39-17 1210 Saint-Josse-ten-Noode, Belgium;50.854094, 4.375173;Sink;126',
-      'PAC Woluwe-Saint-Pierre;Avenue du Parc de Woluwe 86-44 1160 Auderghem, Belgium;50.823228, 4.427453;Sink;63.08',
-      "PAC d’Auderghem/Watermael-Boitsfort;1860 chaussée de Wavre, 1160 Auderghem;50.809948, 4.445271;Sink;252.32",
-      "RecyPark South;1190 Forest, Belgium;50.810799, 4.314789;Sink;668",
-      "RecyPark Nord;Rue du Rupel, 1000 Bruxelles, Belgium;50.880181, 4.377136;Sink;445"
-    ])
   }
-  */
+  /*
+    {
+      material: 'Metals',
+      nodes: createNodes([
+        'Other Global Imports;Shipments, location generalized;51.309933, 3.055030;Source;367,689',
+        'Arcelor Steel Belgium;Lammerdries 10, 2440 Geel, Belgium;51.145051, 4.939373;Conversion;27,872',
+        'Duplex House Typology;Everywhere in Brussels;NA;Demand;3,048',
+        'Apartment Building Typology;Everywhere in Brussels;NA;Demand;18,548',
+        'Residential Buildings (all typologies);Everywhere in Brussels;NA;Demand;75,404',
+        'Metallo Belgium;Nieuwe Dreef 33, 2340 Beerse, Belgium;51.318025, 4.817432;Reconversion;54,000',
+        'Private Sector Collection;Everywhere in Brussels;NA;Sink;96,316',
+        'RecyPark South;1190 Forest, Belgium;50.810799, 4.314789;Sink;101',
+        'RecyPark Nord;Rue du Rupel, 1000 Bruxelles, Belgium;50.880181, 4.377136;Sink;67'
+      ])
+    },
+
+    {
+      material: 'Wood',
+      nodes: createNodes([
+        'Forêt de Soignes;Watermael-Boitsfort Belgium ;50.777072, 4.409960;Source;6,288',
+        'Germany Imports;Germany, nearest point;50.786952, 6.102697;Source;66,812',
+        'Netherlands Imports;Netherlans, nearest point;51.467197, 4.609125;Source;52,352',
+        'Other Global Imports;Shipments, location generalized;51.309933, 3.055030;Source;323,384',
+        'Barthel Pauls Sawmill;Pôle Ardenne Bois 1, 6671 Bovigny, Belgium;50.259872, 5.933474;Conversion;200,430',
+        "Lochten & Germeau;Bd de l’Humanité, 51, 1190 Vorst, Belgium;50.820974, 4.314469;Distribution; NA, only for directional/path",
+        'Duplex House Typology;Everywhere in Brussels;NA;Demand;1,955',
+        'Apartment Building Typology;Everywhere in Brussels;NA;Demand;11,250',
+        'Residential Buildings (all typologies);Everywhere in Brussels;NA;Demand;45,659',
+        'Rotor Deconstruction;Prévinairestraat / Rue Prévinaire 58 1070 Anderlecht;50.839714, 4.352730;Reconversion;15,462',
+        'PAC Uccle;Boulevard de la Deuxième Armée Britannique 625-667 1190 Forest, Belgium;50.801647, 4.305641;Sink;189',
+        'PAC Saint-Josse;Rue Verboeckhaven 39-17 1210 Saint-Josse-ten-Noode, Belgium;50.854094, 4.375173;Sink;126',
+        'PAC Woluwe-Saint-Pierre;Avenue du Parc de Woluwe 86-44 1160 Auderghem, Belgium;50.823228, 4.427453;Sink;63.08',
+        "PAC d’Auderghem/Watermael-Boitsfort;1860 chaussée de Wavre, 1160 Auderghem;50.809948, 4.445271;Sink;252.32",
+        "RecyPark South;1190 Forest, Belgium;50.810799, 4.314789;Sink;668",
+        "RecyPark Nord;Rue du Rupel, 1000 Bruxelles, Belgium;50.880181, 4.377136;Sink;445"
+      ])
+    }
+    */
 ];
 
 /**

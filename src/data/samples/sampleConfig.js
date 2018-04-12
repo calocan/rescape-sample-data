@@ -14,6 +14,7 @@ import {environmentConfig} from 'environments/testConfig';
 import {createGlobalSampleConfig} from './global-sample/globalSampleConfig';
 import {createOaklandSampleConfig} from './oakland-sample/oaklandSampleConfig';
 import {createParisSampleConfig} from './paris-sample/parisSampleConfig';
+import {createBelgiumConfig} from 'data/belgium/belgiumConfig'
 import {mergeDeepAll} from 'rescape-ramda';
 import {defaultConfig} from 'data/default/defaultConfig';
 import {firstUserLens} from 'rescape-helpers';
@@ -25,7 +26,7 @@ import {firstUserLens} from 'rescape-helpers';
  * @return {Object} A complete sample config
  */
 export const createSampleConfig = (config = environmentConfig) => {
-  const oaklandConfig = createOaklandSampleConfig(config)
+  const belgiumConfig = createBelgiumConfig(config);
   return mergeDeepAll([
     {
       // Any settings that aren't Region specific.
@@ -37,14 +38,16 @@ export const createSampleConfig = (config = environmentConfig) => {
       }
     },
     createGlobalSampleConfig(config),
-    // Oakland Region
-    // Make the first user active
+    // Belgium Region
     R.over(
-      firstUserLens(oaklandConfig),
+      // Make the first user of Belgium region active
+      firstUserLens(belgiumConfig),
       R.merge({isActive: true}),
-      oaklandConfig
+      belgiumConfig
     ),
+    // Oakland Region
+    createOaklandSampleConfig(config),
     // Paris Region
     createParisSampleConfig(config)
   ]);
-}
+};
