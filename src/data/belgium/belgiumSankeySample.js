@@ -1,6 +1,7 @@
 import * as R from 'ramda';
 import {mapPropValueAsIndex} from 'rescape-ramda';
 import numeral from 'numeral';
+import parseDecimalNumber from 'parse-decimal-number'
 
 const columns = [
   'siteName',
@@ -167,6 +168,7 @@ const groupToNodesAndLinks = (accumulatedGraph, group) => {
               {
                 index: i + nodeCount,
                 material: group.material,
+                value: parseDecimalNumber(node[valueKey]),
                 type: 'Feature',
                 geometry: {
                   type: 'Point',

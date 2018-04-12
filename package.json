@@ -49,6 +49,7 @@
     "immutable": "^4.0.0-rc.9",
     "moment": "^2.22.0",
     "numeral": "^2.0.6",
+    "parse-decimal-number": "^1.0.0",
     "ramda": "^0.25.0",
     "ramda-lens": "^0.1.2",
     "rescape-helpers": "^1.1.29",
