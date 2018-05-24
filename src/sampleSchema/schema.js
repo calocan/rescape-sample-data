@@ -322,7 +322,7 @@ const StoreType = new GraphQLObjectType({
       },
       settings: {type: new GraphQLList(SettingsType)}
     },
-    // Worthless list all the geojson types here so the schema includes them. Feature type needs them as subclass
+    // Worthless list all the geojson types here so the createSchema includes them. Feature type needs them as subclass
     // but they aren't explicitly listed
     R.mapObjIndexed(type => ({type}), geojson)
   )

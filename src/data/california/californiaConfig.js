@@ -1,6 +1,5 @@
-import {environmentConfig} from 'environments/developmentConfig';
-import {defaultConfig} from 'data/default/defaultConfig';
-import {applyRegionsToUsers, firstUserLens} from 'rescape-helpers';
+import {environmentConfig} from 'environments/testConfig';
+import {applyRegionsToUsers} from 'rescape-helpers';
 import {mergeDeep} from 'rescape-ramda';
 import regions from './californiaRegions'
 import users from './californiaUsers'

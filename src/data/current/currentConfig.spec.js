@@ -14,7 +14,6 @@ import {getCurrentConfig} from './currentConfig';
 describe('getCurrentConfig', () => {
   test('getCurrentConfig', () => {
     expect(getCurrentConfig('test')).toEqual(require('data/samples/sampleConfig').createSampleConfig());
-    expect(getCurrentConfig('development')).toEqual(require('data/california/californiaConfig').californiaConfig);
     expect(() => getCurrentConfig('production')).toThrow();
     expect(() => getCurrentConfig('gobblygook')).toThrow();
   });

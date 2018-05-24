@@ -88,14 +88,14 @@ const makeSimpleResolvers = data => ({
 
 
 /**
- * Modifies the given schema to add simple resolvers
+ * Modifies the given createSchema to add simple resolvers
  * @param {Object} schema A GraphlQL SchemaObject
  * @param {Object} data A full data structure that matches
- * the structure the schema
+ * the structure the createSchema
  * @returns {Object} The given GraphQLSchema with resolvers added
 */
 export const createSimpleResolvedSchema = (schema, data) => {
-  addResolveFunctionsToSchema(schema, makeSimpleResolvers(data))
+  addResolveFunctionsToSchema({schema, resolvers: makeSimpleResolvers(data)})
   return schema
 }
 

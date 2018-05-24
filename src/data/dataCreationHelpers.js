@@ -348,11 +348,13 @@ export const stopTimeGenerator = function *(trip, stops, startTime, endTime, dwe
     const imStops = fromImmutable(stops);
     // The duration of the endTime
     const endDuration = moment.duration(endTime);
+    // Zip the imStops together so we can access it in overlapping pairs
+    const pairs = R.zip(R.slice(0, -1, imStops), R.slice(1, Infinity, imStops));
     // The total distance between stops
-    const totalDistance = reduceWithNext(
-        (total, current, next) => total + calculateDistance(current.location, next.location),
-        imStops,
-        0
+    const totalDistance = R.reduce(
+        (total, [current, next]) => total + calculateDistance(current.location, next.location),
+        0,
+        pairs
     );
 
     /**

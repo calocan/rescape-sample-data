@@ -10,12 +10,14 @@
  */
 import {graphql} from 'graphql';
 import {addMockFunctionsToSchema} from 'graphql-tools';
-import schema from './schema';
+import createSchema from './schema';
+import R from 'ramda';
+import {reqStrPathThrowing} from 'rescape-ramda';
 
-describe('schema', () => {
-  test('Can process schema', () => {
-    // Add mocks, modifies schema in place
-    addMockFunctionsToSchema({schema: schema()});
+describe('createSchema', () => {
+  test('Can process createSchema', (done) => {
+    // Add mocks, modifies createSchema in place
+    addMockFunctionsToSchema({schema: createSchema()});
 
     const query = `
         query tasksForUser {
@@ -27,6 +29,9 @@ describe('schema', () => {
         }
     `;
 
-    graphql(schema, query).then((result) => console.log('Got result', result));
+    graphql(createSchema(), query).then(result => {
+      expect(R.length(reqStrPathThrowing('data.store.regions'))).toEqual(1);
+      done();
+    });
   });
 });
