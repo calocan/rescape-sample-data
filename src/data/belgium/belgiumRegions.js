@@ -12,8 +12,8 @@
 import journeys from './belgiumJourneys.json';
 import locations from './belgiumUserLocations.json';
 import routes from './belgiumRoutes'
-import * as routeTypes from 'data/default/routeTypes';
-import {defaultConfig} from 'data/default/defaultConfig'
+import * as routeTypes from '../default/routeTypes';
+import {defaultConfig} from '../default/defaultConfig'
 import {applyDefaultRegion} from 'rescape-helpers';
 import trips from './belgiumTrips'
 import stops from './belgiumStops'

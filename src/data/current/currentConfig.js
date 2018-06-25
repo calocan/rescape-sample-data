@@ -13,8 +13,8 @@ import * as R from 'ramda';
 import {mergeDeep} from 'rescape-ramda';
 // I think rollup lets imports be null if not defined, in case any of these are not included in a production build
 // https://github.com/rollup/rollup/pull/1342
-import {createSampleConfig} from 'data/samples/sampleConfig'
-import {createCaliforniaConfig} from 'data/california/californiaConfig'
+import {createSampleConfig} from '../samples/sampleConfig'
+import {createCaliforniaConfig} from '../california/californiaConfig'
 const environment = process.env.NODE_ENV;
 
 /**

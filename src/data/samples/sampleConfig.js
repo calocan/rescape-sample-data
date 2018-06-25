@@ -10,13 +10,13 @@
  */
 
 import * as R from 'ramda';
-import {environmentConfig} from 'environments/testConfig';
+import {environmentConfig} from '../../environments/testConfig';
 import {createGlobalSampleConfig} from './global-sample/globalSampleConfig';
 import {createOaklandSampleConfig} from './oakland-sample/oaklandSampleConfig';
 import {createParisSampleConfig} from './paris-sample/parisSampleConfig';
-import {createBelgiumConfig} from 'data/belgium/belgiumConfig'
+import {createBelgiumConfig} from '../belgium/belgiumConfig'
 import {mergeDeepAll} from 'rescape-ramda';
-import {defaultConfig} from 'data/default/defaultConfig';
+import {defaultConfig} from '../default/defaultConfig';
 import {firstUserLens} from 'rescape-helpers';
 
 // Merge the global and regional sampleConfigs

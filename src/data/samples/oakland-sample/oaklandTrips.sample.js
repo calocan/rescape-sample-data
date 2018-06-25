@@ -16,12 +16,12 @@
 import stops from './oaklandStops.sample'
 import w from './oaklandStops.sample'
 import routes from './oaklandRoutes.sample'
-import {createTripWithStopTimesPair, orderStops, stopTimeGenerator} from 'data/dataCreationHelpers';
-import {stopResolver, routeResolver} from 'data/dataQueryHelpers';
+import {createTripWithStopTimesPair, orderStops, stopTimeGenerator} from '../../dataCreationHelpers';
+import {stopResolver, routeResolver} from '../../dataQueryHelpers';
 import places from './oaklandPlaces.sample';
 // Circular
 //import * as regions from './oaklandRegions.sample';
-import {DEFAULT_SERVICE} from 'data/default/services';
+import {DEFAULT_SERVICE} from '../../default/services';
 import * as R from 'ramda';
 
 const resolveStop = stopResolver(stops);

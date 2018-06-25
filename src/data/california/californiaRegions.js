@@ -12,8 +12,8 @@
 import journeys from './californiaJourneys.json';
 import locations from './californiaUserLocations.json';
 import routes from './californiaRoutes'
-import * as routeTypes from 'data/default/routeTypes';
-import {defaultConfig} from 'data/default/defaultConfig'
+import * as routeTypes from '../default/routeTypes';
+import {defaultConfig} from '../default/defaultConfig'
 import {applyDefaultRegion} from 'rescape-helpers';
 import trips from './californiaTrips'
 import stops from './californiaStops'

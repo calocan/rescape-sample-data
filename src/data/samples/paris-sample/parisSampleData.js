@@ -10,14 +10,14 @@
  */
 
 export const data = {
-  cities: require('./oaklandCities.sample.json'),
-  journeys: require('./oaklandJourneys.sample.json'),
-  locations: require('./oaklandLocations.sample'),
-  places: require('./oaklandPlaces.sample'),
-  regions: require('./oaklandRegions.sample'),
-  routes: require('./oaklandRoutes.sample'),
-  routings: require('./oaklandRoutings.sample.json'),
-  stops: require('./oaklandStops.sample'),
-  trips: require('./oaklandTrips.sample'),
-  userLocations: require('./oaklandUserLocations.sample.json')
+  cities: require('./parisCities.sample.json'),
+  journeys: require('./parisJourneys.sample.json'),
+  locations: require('./parisLocations.sample'),
+  places: require('./parisPlaces.sample'),
+  regions: require('./parisRegions.sample'),
+  routes: require('./parisRoutes.sample'),
+  routings: require('./parisRoutings.sample.json'),
+  stops: require('./parisStops.sample'),
+  trips: require('./parisTrips.sample'),
+  userLocations: require('./parisUserLocations.sample.json')
 };

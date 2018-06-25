@@ -16,12 +16,12 @@
 import stops from './parisStops.sample'
 import w from './parisStops.sample'
 import routes from './parisRoutes.sample'
-import {createTripWithStopTimesPair, orderStops, stopTimeGenerator} from 'data/dataCreationHelpers';
-import {stopResolver, routeResolver} from 'data/dataQueryHelpers';
+import {createTripWithStopTimesPair, orderStops, stopTimeGenerator} from '../../dataCreationHelpers';
+import {stopResolver, routeResolver} from '../../dataQueryHelpers';
 import places from './parisPlaces.sample';
 //Circular
 //import * as regions from './parisRegions.sample';
-import {DEFAULT_SERVICE} from 'data/default/services';
+import {DEFAULT_SERVICE} from '../../default/services';
 import * as R from 'ramda';
 
 const resolveStop = stopResolver(stops);

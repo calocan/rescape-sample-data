@@ -9,11 +9,11 @@
  * THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-import {createRoute} from 'data/dataCreationHelpers';
+import {createRoute} from '../../dataCreationHelpers';
 import places from './parisPlaces.sample';
 // Cicular
 //import * as regions from './parisRegions.sample';
-import * as routeTypes from 'data/default/routeTypes';
+import * as routeTypes from '../../default/routeTypes';
 
 const defaultRouteType = routeTypes.INTER_REGIONAL_RAIL_SERVICE.id;
 

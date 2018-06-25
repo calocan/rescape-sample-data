@@ -1,4 +1,4 @@
-import {environmentConfig} from 'environments/testConfig';
+import {environmentConfig} from '../../environments/testConfig';
 import {applyRegionsToUsers} from 'rescape-helpers';
 import {mergeDeep} from 'rescape-ramda';
 import regions from './californiaRegions'

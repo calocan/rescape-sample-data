@@ -11,9 +11,10 @@
 
 import * as R from 'ramda';
 import moment from 'moment';
+import regeneratorRuntime from 'regenerator-runtime'
 
 import {fromImmutable, toTimeString, calculateDistance} from 'rescape-helpers';
-const { capitalize, compact, compactJoin, emptyToNull, idOrIdFromObj, reduceWithNext } = require('rescape-ramda');
+const { capitalize, compact, compactJoin, emptyToNull, idOrIdFromObj } = require('rescape-ramda');
 
 // Direction ids for typical Trip pairs
 export const FROM_TO_DIRECTION = {

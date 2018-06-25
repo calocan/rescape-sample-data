@@ -10,11 +10,12 @@
  */
 
 import {createSimpleResolvedSchema} from './simpleResolvers';
-import {createSampleConfig} from 'data/samples/sampleConfig';
+import {createSampleConfig} from '../data/samples/sampleConfig';
 import makeSchema from './schema';
 import {graphql} from 'graphql';
 import * as R from 'ramda';
 import {mapped} from 'ramda-lens'
+import regeneratorRuntime from 'regenerator-runtime'
 
 describe('mockExecutableSchema', () => {
   const sampleConfig = createSampleConfig()

@@ -9,15 +9,14 @@
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 import {addResolveFunctionsToSchema} from 'graphql-tools';
-import * as R from 'ramda'
-import {reqPathThrowing} from 'rescape-ramda'
-const objectValues = field => (obj) => R.values(reqPathThrowing([field], obj))
+import * as R from 'ramda';
+import {reqPathThrowing} from 'rescape-ramda';
+
+const objectValues = field => (obj) => R.values(reqPathThrowing([field], obj));
 
 // Original example from: https://github.com/apollographql/graphql-tools
 const makeSimpleResolvers = data => ({
-  Operation: {
-
-  },
+  Operation: {},
   Permission: {
     operations: objectValues('operations')
   },
@@ -33,35 +32,19 @@ const makeSimpleResolvers = data => ({
   Geojson: {
     locations: objectValues('locations')
   },
-  Bounds: {
-
-  },
-  Geospatial: {
-
-  },
-  Viewport: {
-
-  },
-  Mapbox: {
-
-  },
+  Bounds: {},
+  Geospatial: {},
+  Viewport: {},
+  Mapbox: {},
   Region: {
     name(obj, args) {
-      return obj.name
-    },
+      return obj.name;
+    }
   },
-  MapboxSettings: {
-
-  },
-  ApiSettings: {
-
-  },
-  OverpassSettings: {
-
-  },
-  Settings: {
-
-  },
+  MapboxSettings: {},
+  ApiSettings: {},
+  OverpassSettings: {},
+  Settings: {},
   Store: {
     regions: objectValues('regions'),
     users: objectValues('users'),
@@ -69,9 +52,9 @@ const makeSimpleResolvers = data => ({
   },
   Query: {
     store(obj, args) {
-      return data
-    },
-  },
+      return data;
+    }
+  }
   /*
   Mutation: {
     upvotePost(_, { postId }) {
@@ -93,9 +76,9 @@ const makeSimpleResolvers = data => ({
  * @param {Object} data A full data structure that matches
  * the structure the createSchema
  * @returns {Object} The given GraphQLSchema with resolvers added
-*/
+ */
 export const createSimpleResolvedSchema = (schema, data) => {
-  addResolveFunctionsToSchema({schema, resolvers: makeSimpleResolvers(data)})
-  return schema
-}
+  addResolveFunctionsToSchema({schema, resolvers: makeSimpleResolvers(data)});
+  return schema;
+};
 

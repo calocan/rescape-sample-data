@@ -346,7 +346,6 @@ const MutationType = new GraphQLObjectType({
         filterNodeValue: { type: new GraphQLNonNull(GraphQLBoolean) }
       },
     }
-
   }
 })
 

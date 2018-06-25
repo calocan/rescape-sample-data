@@ -1,7 +1,7 @@
 
-import {createStop} from 'data/dataCreationHelpers';
+import {createStop} from '../../dataCreationHelpers';
 import places from './parisPlaces.sample';
-import * as stopTypes from 'data/default/stopTypes';
+import * as stopTypes from '../../default/stopTypes';
 
 export const UNION = 'Union';
 export const CENTRAL = 'Central';

@@ -16,12 +16,12 @@
 import stops from './californiaStops'
 import w from './californiaStops'
 import routes from './californiaRoutes'
-import {createTripWithStopTimesPair, orderStops, stopTimeGenerator} from 'data/dataCreationHelpers';
-import {stopResolver, routeResolver} from 'data/dataQueryHelpers';
+import {createTripWithStopTimesPair, orderStops, stopTimeGenerator} from '../dataCreationHelpers';
+import {stopResolver, routeResolver} from '../dataQueryHelpers';
 import places from './californiaPlaces';
 // Circular
 // import * as regions from './californiaRegions';
-import {DEFAULT_SERVICE} from 'data/default/services';
+import {DEFAULT_SERVICE} from '../default/services';
 import * as R from 'ramda';
 
 const resolveStop = stopResolver(stops);

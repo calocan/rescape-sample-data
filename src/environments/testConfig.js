@@ -1,4 +1,4 @@
-import privateConfig from 'config.js';
+import privateConfig from '../config.js';
 import {mergeDeep} from 'rescape-ramda';
 
 export const environmentConfig = mergeDeep(privateConfig, {

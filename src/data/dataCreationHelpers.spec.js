@@ -1,16 +1,15 @@
-
 import places from './california/californiaPlaces';
 import * as routeTypes from './default/routeTypes';
 import {DEFAULT_SERVICE} from './default/services';
-import * as stopTypes from 'data/default/stopTypes';
+import * as stopTypes from './default/stopTypes';
 import {
   createRoute, createRouteId, createService, createStop, createStopId, createStopTimes, createTrip, createTripId,
   createTripWithStopTimesPair, FROM_TO_DIRECTION,
-  orderStops, TO_FROM_DIRECTION
-} from 'data/dataCreationHelpers';
-import {EAST_BAY} from 'data/california/californiaRegions';
-import {stopResolver} from 'data/dataQueryHelpers';
-import {AMTRAK, CENTRAL, TRANSBAY, UNION} from 'data/california/californiaStops';
+  orderStops, TO_FROM_DIRECTION,
+} from './dataCreationHelpers';
+import {EAST_BAY} from './california/californiaRegions';
+import {stopResolver} from './dataQueryHelpers';
+import {AMTRAK, CENTRAL, TRANSBAY, UNION} from './california/californiaStops';
 
 describe('Data Creation Helpers', () => {
     test('Creates a Stop id from a Place and Stop location', () => {

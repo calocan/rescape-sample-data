@@ -1,4 +1,4 @@
-import {environmentConfig} from 'environments/testConfig';
+import {environmentConfig} from '../../../environments/testConfig';
 import regions from './parisRegions.sample'
 import users from './parisUsers.sample'
 import {mergeDeep} from 'rescape-ramda';

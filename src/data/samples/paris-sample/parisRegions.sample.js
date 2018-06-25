@@ -12,8 +12,8 @@
 import journeys from './parisJourneys.sample.json';
 import locations from './parisUserLocations.sample.json';
 import routes from './parisRoutes.sample'
-import * as routeTypes from 'data/default/routeTypes';
-import {defaultConfig} from 'data/default/defaultConfig'
+import * as routeTypes from '../../default/routeTypes';
+import {defaultConfig} from '../../default/defaultConfig'
 import {applyDefaultRegion} from 'rescape-helpers';
 import trips from './parisTrips.sample'
 import stops from './parisStops.sample'

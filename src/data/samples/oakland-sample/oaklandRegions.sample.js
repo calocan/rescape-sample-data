@@ -12,8 +12,8 @@
 import journeys from './oaklandJourneys.sample.json';
 import locations from './oaklandUserLocations.sample.json';
 import routes from './oaklandRoutes.sample'
-import * as routeTypes from 'data/default/routeTypes';
-import {defaultConfig} from 'data/default/defaultConfig'
+import * as routeTypes from '../../default/routeTypes';
+import {defaultConfig} from '../../default/defaultConfig'
 import {applyDefaultRegion} from 'rescape-helpers';
 import trips from './oaklandTrips.sample'
 import stops from './oaklandStops.sample'
