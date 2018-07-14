@@ -1,4 +1,4 @@
-{
+export default {
   "current": "1487635143780",
   "history": [
     "1487635143780"

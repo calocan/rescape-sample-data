@@ -1,10 +1,7 @@
-{
+export default {
   "current": null,
-  "history": [
-  ],
+  "history": [],
   "entries": {
-    "journeys": [
-
-    ]
+    "journeys": []
   }
-}
+};

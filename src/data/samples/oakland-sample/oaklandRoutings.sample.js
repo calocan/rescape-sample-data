@@ -1,4 +1,4 @@
-{
+export default {
   "1487637354681": {
     "id": "1487637354681",
     "description": "Routing through Stockton",

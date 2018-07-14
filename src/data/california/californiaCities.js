@@ -1,4 +1,4 @@
-[
+export default [
   {
     "cityName": "San Francisco",
     "latitude": 37.7749,

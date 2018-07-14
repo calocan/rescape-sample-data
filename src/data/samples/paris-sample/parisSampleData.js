@@ -10,14 +10,14 @@
  */
 
 export const data = {
-  cities: require('./parisCities.sample.json'),
-  journeys: require('./parisJourneys.sample.json'),
+  cities: require('./parisCities.sample.js'),
+  journeys: require('./parisJourneys.sample.js'),
   locations: require('./parisLocations.sample'),
   places: require('./parisPlaces.sample'),
   regions: require('./parisRegions.sample'),
   routes: require('./parisRoutes.sample'),
-  routings: require('./parisRoutings.sample.json'),
+  routings: require('./parisRoutings.sample.js'),
   stops: require('./parisStops.sample'),
   trips: require('./parisTrips.sample'),
-  userLocations: require('./parisUserLocations.sample.json')
+  userLocations: require('./parisUserLocations.sample.js')
 };

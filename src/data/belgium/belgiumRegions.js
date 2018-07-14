@@ -9,8 +9,8 @@
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-import journeys from './belgiumJourneys.json';
-import locations from './belgiumUserLocations.json';
+import journeys from './belgiumJourneys.js';
+import locations from './belgiumUserLocations.js';
 import routes from './belgiumRoutes'
 import * as routeTypes from '../default/routeTypes';
 import {defaultConfig} from '../default/defaultConfig'
@@ -19,7 +19,7 @@ import trips from './belgiumTrips'
 import stops from './belgiumStops'
 import osm from './belgiumOsm'
 import {reqPathThrowing} from 'rescape-ramda'
-import graph, {stages, stageKey, valueKey} from './belgiumSankeySample'
+import graph, {stages, stageKey, valueKey, locationKey, nodeNameKey} from './belgiumSankeySample'
 
 // merge the default region template with our region(s)
 export default applyDefaultRegion(defaultConfig, {
@@ -36,7 +36,9 @@ export default applyDefaultRegion(defaultConfig, {
         graph,
         stages,
         stageKey,
-        valueKey
+        valueKey,
+        locationKey,
+        nodeNameKey
       }
     },
 

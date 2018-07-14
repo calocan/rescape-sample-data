@@ -10,14 +10,14 @@
  */
 
 export const data = {
-  cities: require('./oaklandCities.sample.json'),
-  journeys: require('./oaklandJourneys.sample.json'),
+  cities: require('./oaklandCities.sample.js'),
+  journeys: require('./oaklandJourneys.sample.js'),
   locations: require('./oaklandLocations.sample'),
   places: require('./oaklandPlaces.sample'),
   regions: require('./oaklandRegions.sample'),
   routes: require('./oaklandRoutes.sample'),
-  routings: require('./oaklandRoutings.sample.json'),
+  routings: require('./oaklandRoutings.sample.js'),
   stops: require('./oaklandStops.sample'),
   trips: require('./oaklandTrips.sample'),
-  userLocations: require('./oaklandUserLocations.sample.json')
+  userLocations: require('./oaklandUserLocations.sample.js')
 };

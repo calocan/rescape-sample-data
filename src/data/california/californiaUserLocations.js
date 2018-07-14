@@ -1,4 +1,4 @@
-[
+export default [
   {
     "searchTerm": "Children's Fairyland",
     "resolvedAddress": "699 Bellevue Ave, Oakland, CA 94610",

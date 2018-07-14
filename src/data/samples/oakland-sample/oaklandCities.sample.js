@@ -1,4 +1,4 @@
-{
+export default {
   "san_francisco": {
     "cityName": "San Francisco",
     "latitude": 37.7749,
