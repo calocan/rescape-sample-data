@@ -1,4 +1,4 @@
-[
+export default [
   {
     "cityName": "Brussels",
     "latitude": 50.8503,
