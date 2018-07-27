@@ -4378,11 +4378,8 @@ Object {
       },
     },
     "domain": "localhost",
-    "graphcool": Object {
-      "authTokenKey": "graphcool-auth-token",
-      "linksPerPage": 5,
-      "serviceIdKey": "cjajyycub38710185wt87zsm8",
-      "userId": "graphcool-user-id",
+    "graphql": Object {
+      "url": "http://localhost:8000/api/graphql",
     },
     "mapbox": Object {
       "iconAtlas": "data/location-icon-atlas.png",

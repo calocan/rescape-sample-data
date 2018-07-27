@@ -11,6 +11,8 @@
 import {addResolveFunctionsToSchema} from 'graphql-tools';
 import * as R from 'ramda';
 import {reqPathThrowing} from 'rescape-ramda';
+import makeSchema from 'sampleSchema/schema';
+import {getCurrentConfig} from 'data/current';
 
 const objectValues = field => (obj) => R.values(reqPathThrowing([field], obj));
 
@@ -81,4 +83,11 @@ export const createSimpleResolvedSchema = (schema, data) => {
   addResolveFunctionsToSchema({schema, resolvers: makeSimpleResolvers(data)});
   return schema;
 };
+
+/**
+ * A sample schema using simple resolver based on the getCurrentConfig()
+ * The current config is sample data based on the environment being test or development
+ * @type {Object} The GraphQlSchema with resolvers added
+ */
+export const sampleSimpleResolvedSchema = createSimpleResolvedSchema(makeSchema(), getCurrentConfig());
 

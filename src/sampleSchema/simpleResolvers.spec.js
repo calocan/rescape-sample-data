@@ -9,19 +9,16 @@
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-import {createSimpleResolvedSchema} from './simpleResolvers';
+import {sampleSimpleResolvedSchema} from './simpleResolvers';
 import {createSampleConfig} from '../data/samples/sampleConfig';
-import makeSchema from './schema';
 import {graphql} from 'graphql';
 import * as R from 'ramda';
 import {mapped} from 'ramda-lens'
-import regeneratorRuntime from 'regenerator-runtime'
 
 describe('mockExecutableSchema', () => {
-  const sampleConfig = createSampleConfig()
-  test('createSimpleResolvedSchema', async () => {
-    const resolvedSchema = createSimpleResolvedSchema(makeSchema(), sampleConfig);
-    expect(resolvedSchema).toMatchSnapshot();
+  const sampleConfig = createSampleConfig();
+  test('sampleSimpleResolvedSchema', async () => {
+    expect(sampleSimpleResolvedSchema).toMatchSnapshot();
     const query = `
         query allRegions {
             store {
@@ -34,7 +31,7 @@ describe('mockExecutableSchema', () => {
 
     const schemaRegionLens = R.compose(R.lensPath(['data', 'store', 'regions'], mapped, R.lensProp('id')))
     const sampleRegionLens = R.compose(R.lensPath(['regions'], mapped, R.lensProp('id')))
-    const regions = await graphql(resolvedSchema, query).then(
+    const regions = await graphql(sampleSimpleResolvedSchema, query).then(
       result => R.view(schemaRegionLens, result)
     )
     expect(regions).toEqual(

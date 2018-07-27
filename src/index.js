@@ -20,4 +20,6 @@ export {
   createStopId, createStopTime, createTripId, createTripWithStopTimesPair, stopTimeGenerator,
   FROM_TO_DIRECTION, TO_FROM_DIRECTION
 } from './data/dataCreationHelpers';
-export createInitialState from './data/initialState';
+export {default as createInitialState} from './data/initialState';
+export {createSimpleResolvedSchema, sampleSimpleResolvedSchema} from './sampleSchema/simpleResolvers'
+export {default as createSchema} from './sampleSchema/schema'
