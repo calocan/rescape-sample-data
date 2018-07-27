@@ -1,6 +1,6 @@
 {
   "name": "rescape-sample-data",
-  "version": "1.2.26",
+  "version": "1.2.27",
   "description": "Sample data for rescape applications",
   "main": "lib/index.js",
   "module": "es/index.js",
