@@ -78,7 +78,7 @@ const Json = new GraphQLScalarType({
   parseLiteral: R.identity
 });
 
-// Copy of graphql-geojson FeatureObject but expects the propertis to be an object, not a json string
+// Copy of graphql-geojson FeatureObject but expects the properties to be an object, not a json string
 const FeatureObjectWithPropertiesAsObject = new GraphQLObjectType({
   name: 'geojsonFeature',
   description: 'An object that links a geometry to properties in order to provide context.',

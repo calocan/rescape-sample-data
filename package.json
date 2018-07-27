@@ -4,6 +4,7 @@
   "description": "Sample data for rescape applications",
   "main": "lib/index.js",
   "module": "es/index.js",
+  "jsnext:main": "es/index.js",
   "files": [
     "dist",
     "lib",

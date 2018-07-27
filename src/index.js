@@ -9,24 +9,15 @@
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-import {createBelgiumConfig} from './data/belgium/index';
-import {createCaliforniaConfig} from './data/california/index';
-import {getCurrentConfig, currentConfigResolver} from './data/current/index';
-import {defaultConfig, userTemplateKeys, permissions} from './data/default/index';
-import {createSampleConfig} from './data/samples/index';
-import {stopResolver, routeResolver, tripResolver} from './data/dataQueryHelpers';
-import {
+export {createBelgiumConfig} from './data/belgium/index';
+export {createCaliforniaConfig} from './data/california/index';
+export {getCurrentConfig, currentConfigResolver} from './data/current/index';
+export {defaultConfig, userTemplateKeys, permissions} from './data/default/index';
+export {createSampleConfig} from './data/samples/index';
+export {stopResolver, routeResolver, tripResolver} from './data/dataQueryHelpers';
+export {
   createTrip, createStopTimes, createRouteId, orderStops, createRoute, createService, createStop,
   createStopId, createStopTime, createTripId, createTripWithStopTimesPair, stopTimeGenerator,
   FROM_TO_DIRECTION, TO_FROM_DIRECTION
 } from './data/dataCreationHelpers';
-import createInitialState from './data/initialState';
-
-export {
-  createBelgiumConfig, createCaliforniaConfig, getCurrentConfig, currentConfigResolver, defaultConfig, userTemplateKeys,
-  permissions, createSampleConfig,
-  stopResolver, routeResolver, tripResolver,
-  createTrip, createStopTimes, createRouteId, orderStops, createRoute, createService, createStop, createStopId,
-  createStopTime, createTripId, createTripWithStopTimesPair, stopTimeGenerator, FROM_TO_DIRECTION, TO_FROM_DIRECTION,
-  createInitialState
-};
+export createInitialState from './data/initialState';
