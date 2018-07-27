@@ -12,7 +12,7 @@
 export {createBelgiumConfig} from './data/belgium/index';
 export {createCaliforniaConfig} from './data/california/index';
 export {getCurrentConfig, currentConfigResolver} from './data/current/index';
-export {defaultConfig, userTemplateKeys, permissions} from './data/default/index';
+export {createDefaultConfig, userTemplateKeys, permissions} from './data/default/index';
 export {createSampleConfig} from './data/samples/index';
 export {stopResolver, routeResolver, tripResolver} from './data/dataQueryHelpers';
 export {

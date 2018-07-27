@@ -16,9 +16,15 @@ import {mergeDeep} from 'rescape-ramda';
 import {users} from './defaultUsers';
 
 const environment = R.propOr('development', 'NODE_ENV', process.env);
-const {environmentConfig} = require(`environments/${environment}Config`);
+const {environmentConfig} = require(`../../environments/${environment}Config`);
 
-export const defaultConfig = mergeDeep(environmentConfig, {
+/**
+ * Creates the default config by combining defaults with the given envConfig, which should be
+ * a matching structure with config values for the current environment
+ * @param envConfig Required The config for the current environment, such as testing, development, production, etc
+ * @return {Object} A complete config
+ */
+export const createDefaultConfig = envConfig => mergeDeep(envConfig, {
   regions: {
     default: {
       gtfs: {
@@ -56,3 +62,6 @@ export const defaultConfig = mergeDeep(environmentConfig, {
     default: {}
   }
 });
+
+// Internal use only
+export const defaultConfig = createDefaultConfig(environmentConfig);
