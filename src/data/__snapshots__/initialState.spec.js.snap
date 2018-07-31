@@ -1828,7 +1828,7 @@ Object {
         "mapStyle": "mapbox://styles/mapbox/streets-v8",
         "mapboxApiAccessToken": "pk.eyJ1IjoiY2Fsb2NhbiIsImEiOiJjaXl1aXkxZjkwMG15MndxbmkxMHczNG50In0.07Zu3XXYijL6GJMuxFtvQg",
         "preventStyleDiffing": false,
-        "showCluster": "true",
+        "showCluster": true,
         "showZoomControls": true,
         "viewport": Immutable.Map {
           "pitch": 0,
@@ -3041,7 +3041,7 @@ Object {
         "mapStyle": "mapbox://styles/mapbox/streets-v8",
         "mapboxApiAccessToken": "pk.eyJ1IjoiY2Fsb2NhbiIsImEiOiJjaXl1aXkxZjkwMG15MndxbmkxMHczNG50In0.07Zu3XXYijL6GJMuxFtvQg",
         "preventStyleDiffing": false,
-        "showCluster": "true",
+        "showCluster": true,
         "showZoomControls": true,
         "viewport": Immutable.Map {
           "pitch": 0,
@@ -4297,7 +4297,7 @@ Object {
         "mapStyle": "mapbox://styles/mapbox/streets-v8",
         "mapboxApiAccessToken": "pk.eyJ1IjoiY2Fsb2NhbiIsImEiOiJjaXl1aXkxZjkwMG15MndxbmkxMHczNG50In0.07Zu3XXYijL6GJMuxFtvQg",
         "preventStyleDiffing": false,
-        "showCluster": "true",
+        "showCluster": true,
         "showZoomControls": true,
         "viewport": Immutable.Map {
           "pitch": 0,
@@ -4368,7 +4368,7 @@ Object {
   "settings": Object {
     "api": Object {
       "host": "localhost",
-      "port": "3000",
+      "port": "8000",
       "protocol": "http",
       "root": "/graphql/",
     },
@@ -4378,14 +4378,11 @@ Object {
       },
     },
     "domain": "localhost",
-    "graphql": Object {
-      "url": "http://localhost:8000/api/graphql",
-    },
     "mapbox": Object {
       "iconAtlas": "data/location-icon-atlas.png",
       "mapboxApiAccessToken": "pk.eyJ1IjoiY2Fsb2NhbiIsImEiOiJjaXl1aXkxZjkwMG15MndxbmkxMHczNG50In0.07Zu3XXYijL6GJMuxFtvQg",
       "preventStyleDiffing": false,
-      "showCluster": "true",
+      "showCluster": true,
       "showZoomControls": true,
     },
     "markers": Object {},
