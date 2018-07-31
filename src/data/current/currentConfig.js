@@ -18,10 +18,11 @@ import {createCaliforniaConfig} from '../california/californiaConfig'
 const environment = process.env.NODE_ENV;
 
 /**
- * The active environment according to env.js
+ * The active environment according env or NODE_ENV
  * @params {String} env Defaults to the environment string value in {ROOT_DIR}/env.js.
  * Overrideable for testing
- * @type {any|*}
+ * @type {any|*} if 'test' returns createSampleConfig. If 'development' gives a more complete config then test
+ * If production throws an error
  */
 export const getCurrentConfig = (env = environment) => R.cond(
   [

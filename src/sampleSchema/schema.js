@@ -72,25 +72,25 @@ const Json = new GraphQLScalarType({
   name: 'JSON',
   description: 'Arbitrary JSON value',
   serialize: x => {
-    return R.ifElse(R.is(String), x => JSON.parse(x), R.identity)(x);
+    return R.ifElse(R.is(String), x => JSON.parse(x), R.identity)(x)
   },
   parseValue: R.ifElse(R.is(String), x => JSON.parse(x), R.identity),
   parseLiteral: R.identity
-});
+})
 
-// Copy of graphql-geojson FeatureObject but expects the properties to be an object, not a json string
+// Copy of graphql-geojson FeatureObject but expects the propertis to be an object, not a json string
 const FeatureObjectWithPropertiesAsObject = new GraphQLObjectType({
   name: 'geojsonFeature',
   description: 'An object that links a geometry to properties in order to provide context.',
   interfaces: () => [geojson.GeoJSONInterface],
   fields: () => ({
-    type: {type: new GraphQLNonNull(geojson.TypeEnum)},
-    crs: {type: new GraphQLNonNull(geojson.CoordinateReferenceSystemObject)},
-    bbox: {type: new GraphQLList(GraphQLFloat)},
-    geometry: {type: geojson.GeometryInterface},
+    type: { type: new GraphQLNonNull(geojson.TypeEnum) },
+    crs: { type: new GraphQLNonNull(geojson.CoordinateReferenceSystemObject) },
+    bbox: { type: new GraphQLList(GraphQLFloat) },
+    geometry: { type: geojson.GeometryInterface },
     // Here is the only change
-    properties: {type: Json},
-    id: {type: GraphQLString}
+    properties: { type: Json },
+    id: { type: GraphQLString },
   })
 });
 
@@ -125,16 +125,18 @@ const LocationType = new GraphQLObjectType({
 const SankeyNodeType = new GraphQLObjectType({
   name: 'SankeyNode',
   fields: {
-    'siteName': {type: GraphQLString},
-    'location': {type: GraphQLString},
-    'coordinates': {type: GraphQLString},
-    'isGeneralized': {type: GraphQLBoolean},
-    'junctionStage': {type: GraphQLString},
-    'annualTonnage': {type: GraphQLString},
+    siteName: {type: GraphQLString},
+    location: {type: GraphQLString},
+    coordinates: {type: GraphQLString},
+    isGeneralized: {type: GraphQLBoolean},
+    junctionStage: {type: GraphQLString},
+    annualTonnage: {type: GraphQLString},
+    value: {type: GraphQLFloat},
+    name: {type: GraphQLString},
     index: {type: GraphQLInt},
     material: {type: GraphQLString},
     type: {type: GraphQLString},
-    geometry: {type: geojson.GeometryInterface}
+    geometry: { type: geojson.GeometryInterface }
   }
 });
 
@@ -143,7 +145,7 @@ const SankeyLinkType = new GraphQLObjectType({
   fields: {
     source: {type: GraphQLInt},
     target: {type: GraphQLInt},
-    value: {type: GraphQLFloat}
+    value:  {type: GraphQLFloat}
   }
 });
 
@@ -155,10 +157,22 @@ const SankeyGraphType = new GraphQLObjectType({
   }
 });
 
+const SankeyStageType = new GraphQLObjectType({
+  name: "SankeyStage" ,
+  fields: {
+    key: {type: GraphQLString},
+    name: {type: GraphQLString},
+    target: {type: new GraphQLList((GraphQLString))}
+  }
+});
+
 const SankeyType = new GraphQLObjectType({
   name: 'Sankey',
   fields: {
-    graph: {type: SankeyGraphType}
+    graph: {type: SankeyGraphType},
+    stages: {type: new GraphQLList(SankeyStageType)},
+    stageKey: {type: GraphQLString},
+    valueKey: {type: GraphQLString}
   }
 });
 
@@ -251,7 +265,7 @@ const UserType = new GraphQLObjectType({
     name: {type: GraphQLString},
     email: {type: GraphQLString},
     password: {type: GraphQLString},
-    permissions: {type: new GraphQLList(PermissionType)},
+    //permissions: {type: new GraphQLList(PermissionType)},
     regions: {type: new GraphQLList(UserRegionType)}
   })
 });
@@ -323,7 +337,7 @@ const StoreType = new GraphQLObjectType({
       },
       settings: {type: new GraphQLList(SettingsType)}
     },
-    // Worthless list all the geojson types here so the createSchema includes them. Feature type needs them as subclass
+    // Worthless list all the geojson types here so the schema includes them. Feature type needs them as subclass
     // but they aren't explicitly listed
     R.mapObjIndexed(type => ({type}), geojson)
   )
@@ -340,12 +354,12 @@ const QueryType = new GraphQLObjectType({
 const MutationType = new GraphQLObjectType({
   name: 'Mutation',
   fields: {
-    filterSankeyNodes: {
+    filterSankeyNodesMutation: {
       type: SankeyNodeType,
       args: {
-        filterNodeCategory: {type: new GraphQLNonNull(GraphQLString)},
-        filterNodeValue: {type: new GraphQLNonNull(GraphQLBoolean)}
-      }
+        filterNodeCategory: { type: new GraphQLNonNull(GraphQLString) },
+        filterNodeValue: { type: new GraphQLNonNull(GraphQLBoolean) }
+      },
     }
   }
 });

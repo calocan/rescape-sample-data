@@ -13,7 +13,7 @@ import {sampleSimpleResolvedSchema} from './simpleResolvers';
 import {createSampleConfig} from '../data/samples/sampleConfig';
 import {graphql} from 'graphql';
 import * as R from 'ramda';
-import {mapped} from 'ramda-lens'
+import {mapped} from 'ramda-lens';
 
 describe('mockExecutableSchema', () => {
   const sampleConfig = createSampleConfig();
@@ -29,11 +29,11 @@ describe('mockExecutableSchema', () => {
         }
     `;
 
-    const schemaRegionLens = R.compose(R.lensPath(['data', 'store', 'regions'], mapped, R.lensProp('id')))
-    const sampleRegionLens = R.compose(R.lensPath(['regions'], mapped, R.lensProp('id')))
+    const schemaRegionLens = R.compose(R.lensPath(['data', 'store', 'regions'], mapped, R.lensProp('id')));
+    const sampleRegionLens = R.compose(R.lensPath(['regions'], mapped, R.lensProp('id')));
     const regions = await graphql(sampleSimpleResolvedSchema, query).then(
       result => R.view(schemaRegionLens, result)
-    )
+    );
     expect(regions).toEqual(
       R.map(R.pick(['id']), R.values(R.view(sampleRegionLens, sampleConfig)))
     );

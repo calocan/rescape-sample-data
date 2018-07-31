@@ -18,7 +18,7 @@ const env = process.env.NODE_ENV;
 const config = {
   input: [
     './src/index.js',
-    './src/config.js',
+    './src/privateConfig.js',
     './src/data/belgium/belgiumCities.js',
     './src/data/belgium/belgiumConfig.js',
     './src/data/belgium/belgiumJourneys.js',
@@ -80,7 +80,9 @@ const config = {
     './src/data/samples/sampleConfig.js',
     './src/data/dataCreationHelpers.js',
     './src/data/dataQueryHelpers.js',
-    './src/data/initialState.js'
+    './src/data/initialState.js',
+    './src/sampleSchema/simpleResolvers.js',
+    './src/sampleSchema/schema.js'
   ],
   plugins: [
     // Automatically exclude dependencies and peerDependencies from cjs and es builds, (and excludes

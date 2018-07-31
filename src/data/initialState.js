@@ -16,8 +16,7 @@ import {Iterable, fromJS} from 'immutable';
 const toImmutable = obj => Iterable.isIterable(obj) ? obj : fromJS(obj);
 
 /**
- * Returns an initialState based on the given region config. It's possible to configure the state
- * to have multiple regions, but this function only assumes a single initial region
+ * Returns an initialState based on the given config.
  * @param {Object} config The config
  * @return {Object} The state
  */
