@@ -44,5 +44,10 @@ export default {
         api: 'HTTP'
       }
     }
+  },
+  regions: {
+  },
+  users: {
+
   }
 };

@@ -13,7 +13,6 @@ import journeys from './belgiumJourneys.js';
 import locations from './belgiumUserLocations.js';
 import routes from './belgiumRoutes'
 import * as routeTypes from '../default/routeTypes';
-import {defaultConfig} from '../default/defaultConfig'
 import {applyDefaultRegion} from 'rescape-helpers';
 import trips from './belgiumTrips'
 import stops from './belgiumStops'
@@ -22,7 +21,7 @@ import {reqPathThrowing} from 'rescape-ramda'
 import graph, {stages, stageKey, valueKey, locationKey, nodeNameKey} from './belgiumSankeySample'
 
 // merge the default region template with our region(s)
-export default applyDefaultRegion(defaultConfig, {
+export default config => applyDefaultRegion(config, {
   belgium: {
     id: 'belgium',
     name: 'Belgium',

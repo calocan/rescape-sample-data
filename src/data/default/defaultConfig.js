@@ -9,23 +9,20 @@
  * THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-import * as R from 'ramda';
 import * as routeTypes from './routeTypes';
 import {DEFAULT_SERVICE, WEEKEND_SERVICE} from './services';
 import {mergeDeep} from 'rescape-ramda';
 import {users} from './defaultUsers';
 
-const environment = R.propOr('development', 'NODE_ENV', process.env);
-const {environmentConfig} = require(`../../environments/${environment}Config`);
-
 /**
  * Creates the default config by combining defaults with the given envConfig, which should be
  * a matching structure with config values for the current environment
- * @param envConfig Required The config for the current environment, such as testing, development, production, etc
+ * @param config Required The config for the current environment, such as testing, development, production, etc
  * @return {Object} A complete config
  */
-export const createDefaultConfig = envConfig => mergeDeep(envConfig, {
+export const createDefaultConfig = config => mergeDeep(config, {
   regions: {
+    // The default region is a template to merge with other regions
     default: {
       gtfs: {
         calendar: [
@@ -62,6 +59,3 @@ export const createDefaultConfig = envConfig => mergeDeep(envConfig, {
     default: {}
   }
 });
-
-// Internal use only
-export const defaultConfig = createDefaultConfig(environmentConfig);

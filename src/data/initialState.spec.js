@@ -10,10 +10,13 @@
  */
 
 import createInitialState from './initialState'
-import {createSampleConfig} from './samples/sampleConfig';
+import {createDefaultConfig} from './default'
+import privateConfig from '../privateConfig'
+import {getCurrentConfig} from 'data/current';
 
 describe('Initial State', () => {
   test('matches the current configuration', () => {
-    expect(createInitialState(createSampleConfig())).toMatchSnapshot();
+    const config = createDefaultConfig(privateConfig);
+    expect(createInitialState(getCurrentConfig(config))).toMatchSnapshot();
   });
 });

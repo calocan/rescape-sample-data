@@ -13,7 +13,6 @@ import journeys from './californiaJourneys.js';
 import locations from './californiaUserLocations.js';
 import routes from './californiaRoutes'
 import * as routeTypes from '../default/routeTypes';
-import {defaultConfig} from '../default/defaultConfig'
 import {applyDefaultRegion} from 'rescape-helpers';
 import trips from './californiaTrips'
 import stops from './californiaStops'
@@ -25,7 +24,7 @@ export const ALTAMONT = 'Altamont';
 export const EAST_BAY = 'East-Bay';
 
 // merge the default region template with our region(s)
-export default applyDefaultRegion(defaultConfig, {
+export default config => applyDefaultRegion(config, {
   california: {
     id: 'california',
     name: 'California',

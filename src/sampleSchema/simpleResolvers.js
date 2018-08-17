@@ -90,5 +90,5 @@ export const createSimpleResolvedSchema = (schema, data) => {
  * The current config is sample data based on the environment being test or development
  * @type {Object} The GraphQlSchema with resolvers added
  */
-export const sampleSimpleResolvedSchema = createSimpleResolvedSchema(createSchema(), getCurrentConfig());
+export const sampleSimpleResolvedSchema = config => createSimpleResolvedSchema(createSchema(), getCurrentConfig(config));
 

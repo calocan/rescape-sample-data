@@ -9,10 +9,9 @@
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-import {environmentConfig} from '../../environments/testConfig';
 import {applyRegionsToUsers} from 'rescape-helpers';
 import {mergeDeep} from 'rescape-ramda';
-import regions from './belgiumRegions'
+import belgiumRegions from './belgiumRegions'
 import users from './belgiumUsers'
 
 /**
@@ -20,8 +19,11 @@ import users from './belgiumUsers'
  * @param {Object} config Defaults to environments/testConfig. Contains general values
  * @return {Object} The sample config for Oakland
  */
-export const createBelgiumConfig = (config = environmentConfig) => mergeDeep(config, {
-  regions,
-  // Give each users all regions for simplicity
-  users: applyRegionsToUsers(regions, users)
-});
+export const createBelgiumConfig = config => {
+  const regions = belgiumRegions(config);
+  return mergeDeep(config, {
+    regions: regions,
+    // Give each users all regions for simplicity
+    users: applyRegionsToUsers(regions, users(config))
+  });
+}

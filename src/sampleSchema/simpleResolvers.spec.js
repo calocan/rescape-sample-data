@@ -14,11 +14,14 @@ import {createSampleConfig} from '../data/samples/sampleConfig';
 import {graphql} from 'graphql';
 import * as R from 'ramda';
 import {mapped} from 'ramda-lens';
+import privateConfig from '../privateConfig'
+import {createDefaultConfig} from '../data/default'
 
 describe('mockExecutableSchema', () => {
-  const sampleConfig = createSampleConfig();
+  const config = createDefaultConfig(privateConfig);
+  const sampleConfig = createSampleConfig(config);
   test('sampleSimpleResolvedSchema', async () => {
-    expect(sampleSimpleResolvedSchema).toMatchSnapshot();
+    expect(sampleSimpleResolvedSchema(config)).toMatchSnapshot();
     const query = `
         query allRegions {
             store {
@@ -31,7 +34,7 @@ describe('mockExecutableSchema', () => {
 
     const schemaRegionLens = R.compose(R.lensPath(['data', 'store', 'regions'], mapped, R.lensProp('id')));
     const sampleRegionLens = R.compose(R.lensPath(['regions'], mapped, R.lensProp('id')));
-    const regions = await graphql(sampleSimpleResolvedSchema, query).then(
+    const regions = await graphql(sampleSimpleResolvedSchema(config), query).then(
       result => R.view(schemaRegionLens, result)
     );
     expect(regions).toEqual(

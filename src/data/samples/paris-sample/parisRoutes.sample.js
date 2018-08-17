@@ -11,7 +11,7 @@
 
 import {createRoute} from '../../dataCreationHelpers';
 import places from './parisPlaces.sample';
-// Cicular
+// Circular
 //import * as regions from './parisRegions.sample';
 import * as routeTypes from '../../default/routeTypes';
 

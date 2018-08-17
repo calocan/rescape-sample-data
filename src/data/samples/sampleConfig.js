@@ -10,44 +10,47 @@
  */
 
 import * as R from 'ramda';
-import {environmentConfig} from '../../environments/testConfig';
 import {createGlobalSampleConfig} from './global-sample/globalSampleConfig';
 import {createOaklandSampleConfig} from './oakland-sample/oaklandSampleConfig';
 import {createParisSampleConfig} from './paris-sample/parisSampleConfig';
-import {createBelgiumConfig} from '../belgium/belgiumConfig'
+import {createBelgiumConfig} from '../belgium/belgiumConfig';
 import {mergeDeepAll} from 'rescape-ramda';
-import {defaultConfig} from '../default/defaultConfig';
 import {firstUserLens} from 'rescape-helpers';
 
-// Merge the global and regional sampleConfigs
 /**
  * Creates a sampleConfig with the given environment config
  * @param {Object} config Defaults to environments/testConfig
  * @return {Object} A complete sample config
  */
-export const createSampleConfig = (config = environmentConfig) => {
+export const createSampleConfig = config => {
   const belgiumConfig = createBelgiumConfig(config);
-  return mergeDeepAll([
-    {
-      // Any settings that aren't Region specific.
-      styles: defaultConfig.styles,
-      // Any browser settings that would normally be set externally by the browser
-      browser: {
-        width: 1080,
-        height: 720
-      }
-    },
-    createGlobalSampleConfig(config),
-    // Belgium Region
-    R.over(
-      // Make the first user of Belgium region active
-      firstUserLens(belgiumConfig),
-      R.merge({isActive: true}),
-      belgiumConfig
-    ),
-    // Oakland Region
-    createOaklandSampleConfig(config),
-    // Paris Region
-    createParisSampleConfig(config)
-  ]);
+
+  return R.over(
+    // Remove default region
+    R.lensProp('regions'),
+    regions => R.omit(['default'], regions),
+    mergeDeepAll([
+      {
+        // Any settings that aren't Region specific.
+        styles: config.styles,
+        // Any browser settings that would normally be set externally by the browser
+        browser: {
+          width: 1080,
+          height: 720
+        }
+      },
+      createGlobalSampleConfig(config),
+      // Belgium Region
+      R.over(
+        // Make the first user of Belgium region active
+        firstUserLens(belgiumConfig),
+        R.merge({isActive: true}),
+        belgiumConfig
+      ),
+      // Oakland Region
+      createOaklandSampleConfig(config),
+      // Paris Region
+      createParisSampleConfig(config)
+    ])
+  )
 };

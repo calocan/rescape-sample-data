@@ -4396,20 +4396,16 @@ Object {
   },
   "users": Object {
     "app_admin": Object {
-      "sampleAdmin": Object {
-        "id": "sampleAdmin",
-        "name": "Ty Coon",
-        "permissions": Array [
-          "administrate",
-        ],
-        "regions": Object {
-          "ids": Object {},
-        },
+      "isActive": true,
+      "permissions": Array [
+        "administrate",
+      ],
+      "regions": Object {
+        "ids": Object {},
       },
     },
     "belgiumManager": Object {
       "id": "belgiumManager",
-      "isActive": true,
       "name": "Belgium Manager",
       "permissions": Array [
         "manage",
@@ -4443,45 +4439,6 @@ Object {
       "regions": Array [
         Object {
           "id": "belgium",
-          "isSelected": true,
-        },
-      ],
-    },
-    "oaklandManager": Object {
-      "id": "oaklandManager",
-      "name": "Libby Schaaf",
-      "permissions": Array [
-        "manage",
-      ],
-      "regions": Array [
-        Object {
-          "id": "oakland",
-          "isSelected": true,
-        },
-      ],
-    },
-    "oaklandUser": Object {
-      "id": "oaklandUser",
-      "name": "Ryan Russo",
-      "permissions": Array [
-        "use",
-      ],
-      "regions": Array [
-        Object {
-          "id": "oakland",
-          "isSelected": true,
-        },
-      ],
-    },
-    "oaklandVisitor": Object {
-      "id": "oaklandVisitor",
-      "name": "Jeff Tumlin",
-      "permissions": Array [
-        "visit",
-      ],
-      "regions": Array [
-        Object {
-          "id": "oakland",
           "isSelected": true,
         },
       ],
@@ -4524,6 +4481,24 @@ Object {
           "isSelected": true,
         },
       ],
+    },
+    "region_manager": Object {
+      "permissions": Array [
+        "manage",
+      ],
+      "regions": Object {},
+    },
+    "region_user": Object {
+      "permissions": Array [
+        "use",
+      ],
+      "regions": Object {},
+    },
+    "region_visitor": Object {
+      "permissions": Array [
+        "visit",
+      ],
+      "regions": Object {},
     },
   },
 }

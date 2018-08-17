@@ -9,9 +9,8 @@
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-import {environmentConfig} from '../../../environments/testConfig';
-import regions from './oaklandRegions.sample'
-import users from './oaklandUsers.sample'
+import sampleRegions from './oaklandRegions.sample';
+import users from './oaklandUsers.sample';
 import * as R from 'ramda';
 import {applyRegionsToUsers} from 'rescape-helpers';
 
@@ -20,8 +19,11 @@ import {applyRegionsToUsers} from 'rescape-helpers';
  * @param {Object} config Defaults to environments/testConfig. Contains general values
  * @return {Object} The sample config for Oakland
  */
-export const createOaklandSampleConfig = (config = environmentConfig) => R.merge(config, {
-  regions,
-  // Give each users all regions for simplicity
-  users: applyRegionsToUsers(regions, users)
-});
+export const createOaklandSampleConfig = config => {
+  const regions = sampleRegions(config);
+  return R.merge(config, {
+    regions,
+    // Give each users all regions for simplicity
+    users: applyRegionsToUsers(regions, users)
+  });
+};

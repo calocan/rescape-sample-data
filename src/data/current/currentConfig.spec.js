@@ -9,12 +9,15 @@
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
+import {createDefaultConfig} from '../default'
+import privateConfig from '../../privateConfig'
 import {getCurrentConfig} from './currentConfig';
 
 describe('getCurrentConfig', () => {
   test('getCurrentConfig', () => {
-    expect(getCurrentConfig('test')).toEqual(require('data/samples/sampleConfig').createSampleConfig());
-    expect(() => getCurrentConfig('production')).toThrow();
-    expect(() => getCurrentConfig('gobblygook')).toThrow();
+    const config = createDefaultConfig(privateConfig);
+    expect(getCurrentConfig(config, 'test')).toEqual(require('data/samples/sampleConfig').createSampleConfig(config));
+    expect(() => getCurrentConfig(config, 'production')).toThrow();
+    expect(() => getCurrentConfig(config, 'gobblygook')).toThrow();
   });
 });

@@ -13,7 +13,6 @@ import journeys from './parisJourneys.sample.js';
 import locations from './parisUserLocations.sample.js';
 import routes from './parisRoutes.sample'
 import * as routeTypes from '../../default/routeTypes';
-import {defaultConfig} from '../../default/defaultConfig'
 import {applyDefaultRegion} from 'rescape-helpers';
 import trips from './parisTrips.sample'
 import stops from './parisStops.sample'
@@ -25,7 +24,7 @@ export const ALTAMONT = 'Altamont';
 export const EAST_BAY = 'East-Bay';
 
 // merge the default region template with our region(s)
-export default applyDefaultRegion(defaultConfig, {
+export default config => applyDefaultRegion(config, {
   paris: {
     id: 'paris',
     name: 'Paris',
