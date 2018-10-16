@@ -15,6 +15,8 @@ import {mergeDeep} from 'rescape-ramda';
 // https://github.com/rollup/rollup/pull/1342
 import {createSampleConfig} from '../samples/sampleConfig';
 import {createCaliforniaConfig} from '../california/californiaConfig';
+import {createDefaultConfig} from '../default/defaultConfig';
+
 const environment = process.env.NODE_ENV;
 
 /**
@@ -25,18 +27,23 @@ const environment = process.env.NODE_ENV;
  * @type {any|*} if 'test' returns createSampleConfig. If 'development' gives a more complete config then test
  * If production throws an error
  */
-export const getCurrentConfig = (config, env = environment) => R.cond(
-  [
-    [R.equals('test'), () => createSampleConfig(config)],
-    [R.equals('development'), () => createCaliforniaConfig(config)],
-    [R.equals('production'), () => {
-      throw new Error('No production environment is implemented');
-    }],
-    [R.T, () => {
-      throw new Error('No known environment was specified in env.js');
-    }]
-  ]
-)(env);
+export const getCurrentConfig = (config, env = environment) => {
+  // Add the defaultConfig to the given config. This gives us default settings
+  // and template user and regions that are used to configure real users and regions
+  const configWithDefaults = createDefaultConfig(config);
+  return R.cond(
+    [
+      [R.equals('test'), () => createSampleConfig(configWithDefaults)],
+      [R.equals('development'), () => createCaliforniaConfig(configWithDefaults)],
+      [R.equals('production'), () => {
+        throw new Error('No production environment is implemented');
+      }],
+      [R.T, () => {
+        throw new Error('No known environment was specified in env.js');
+      }]
+    ]
+  )(env);
+};
 
 /**
  * Resolves the current configuration based on the userSettings

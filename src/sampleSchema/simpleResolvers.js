@@ -14,7 +14,11 @@ import {reqPathThrowing} from 'rescape-ramda';
 import createSchema from './schema';
 import {getCurrentConfig} from '../data/current/currentConfig';
 
-const objectValues = field => (obj) => R.values(reqPathThrowing([field], obj));
+const objectValues = field => {
+  return obj => {
+    return R.values(reqPathThrowing([field], obj));
+  };
+};
 
 // Original example from: https://github.com/apollographql/graphql-tools
 const makeSimpleResolvers = data => ({
@@ -47,15 +51,11 @@ const makeSimpleResolvers = data => ({
   ApiSettings: {},
   OverpassSettings: {},
   Settings: {},
-  Store: {
-    regions: objectValues('regions'),
-    users: objectValues('users'),
-    settings: objectValues('settings')
-  },
   Query: {
-    store(obj, args) {
-      return data;
-    }
+    // These all ignore the query args and just return everything stupidly
+    regions: (obj, args) => objectValues('regions')(data),
+    users:  (obj, args) => objectValues('users')(data),
+    settings: (obj, args) => objectValues('settings')(data)
   }
   /*
   Mutation: {

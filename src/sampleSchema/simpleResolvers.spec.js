@@ -24,15 +24,13 @@ describe('mockExecutableSchema', () => {
     expect(sampleSimpleResolvedSchema(config)).toMatchSnapshot();
     const query = `
         query allRegions {
-            store {
-                regions {
-                    id
-                },
-            }
+            regions {
+                id
+            },
         }
     `;
 
-    const schemaRegionLens = R.compose(R.lensPath(['data', 'store', 'regions'], mapped, R.lensProp('id')));
+    const schemaRegionLens = R.compose(R.lensPath(['data', 'regions'], mapped, R.lensProp('id')));
     const sampleRegionLens = R.compose(R.lensPath(['regions'], mapped, R.lensProp('id')));
     const regions = await graphql(sampleSimpleResolvedSchema(config), query).then(
       result => R.view(schemaRegionLens, result)

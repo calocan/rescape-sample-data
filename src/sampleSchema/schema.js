@@ -311,9 +311,9 @@ const SettingsType = new GraphQLObjectType({
 });
 
 
-// Store corresponding to what we store on the client
-const StoreType = new GraphQLObjectType({
-  name: 'Store',
+// Query corresponding to what we store on the client
+const QueryType = new GraphQLObjectType({
+  name: 'Query',
   fields: R.merge({
       regions: {
         type: new GraphQLList(RegionType),
@@ -341,14 +341,6 @@ const StoreType = new GraphQLObjectType({
     // but they aren't explicitly listed
     R.mapObjIndexed(type => ({type}), geojson)
   )
-});
-
-// GraphQL query type
-const QueryType = new GraphQLObjectType({
-  name: 'Query',
-  fields: {
-    store: {type: StoreType}
-  }
 });
 
 const MutationType = new GraphQLObjectType({

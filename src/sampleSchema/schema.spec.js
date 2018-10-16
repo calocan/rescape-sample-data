@@ -21,16 +21,14 @@ describe('createSchema', () => {
 
     const query = `
         query tasksForUser {
-            store {
-                regions {
-                    name
-                },
-            }
+            regions {
+                name
+            },
         }
     `;
 
     graphql(createSchema(), query).then(result => {
-      expect(R.length(reqStrPathThrowing('data.store.regions'))).toEqual(1);
+      expect(R.length(reqStrPathThrowing('data.regions'))).toEqual(1);
       done();
     });
   });

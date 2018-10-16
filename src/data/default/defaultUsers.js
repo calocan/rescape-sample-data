@@ -30,7 +30,7 @@ export const permissions = {
 };
 
 /*
-  User template. Merge one of these into a user configuration
+  User templates. Merge one of these into a user configuration
 */
 export const users = {
   [userTemplateKeys.APP_ADMIN]: {
