@@ -1,6 +1,6 @@
 {
   "name": "rescape-sample-data",
-  "version": "1.2.38",
+  "version": "1.2.39",
   "description": "Sample data for rescape applications",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -45,6 +45,7 @@
   },
   "homepage": "https://github.com/calocan/resacape-sample-data",
   "dependencies": {
+    "graphql": "^14.0.2",
     "graphql-geojson": "^1.0.0",
     "graphql-tools": "^3.0.5",
     "immutable": "^4.0.0-rc.9",
