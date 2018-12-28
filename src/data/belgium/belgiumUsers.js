@@ -16,7 +16,7 @@ const {REGION_MANAGER, REGION_USER, REGION_VISITOR} = userTemplateKeys;
 
 // Create three users
 // rename the user templates to match our users
-export default config => R.mergeAll(R.values(mapDefaultUsers(config,
+export default config => R.mergeAll(R.values(mapDefaultUsers(config.users,
   {
     [REGION_MANAGER]: {
       belgiumManager: {

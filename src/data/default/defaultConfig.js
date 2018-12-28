@@ -32,9 +32,8 @@ export const createDefaultConfig = config => mergeDeep(config, {
         routeTypes: routeTypes
       },
       geojson: {
-        osm: {},
-        searches: {}
       },
+      searches: {},
       locations: {},
       mapbox: {
         mapStyle: 'mapbox://styles/mapbox/streets-v8',

@@ -16,7 +16,7 @@ const {APP_ADMIN} = userTemplateKeys;
 
 // Create an admin user
 // rename the user templates to match our users
-export default config => mapDefaultUsers(config,
+export default config => mapDefaultUsers(config.users,
   {
     [APP_ADMIN]: {
       sampleAdmin: {

@@ -20,5 +20,5 @@ import * as R from 'ramda';
 export const createGlobalSampleConfig = config => R.merge(config, {
   // Any user here must be an admin that doesn't have specific regions assigned
   // TODO we'll need some way to indicate admins can access anything
-  users: users
+  users: users(config)
 });

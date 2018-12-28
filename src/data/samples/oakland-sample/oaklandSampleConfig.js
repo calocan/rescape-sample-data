@@ -24,6 +24,6 @@ export const createOaklandSampleConfig = config => {
   return R.merge(config, {
     regions,
     // Give each users all regions for simplicity
-    users: applyRegionsToUsers(regions, users)
+    users: applyRegionsToUsers(regions, users(config))
   });
 };

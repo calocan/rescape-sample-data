@@ -17,7 +17,11 @@ const {REGION_MANAGER, REGION_USER, REGION_VISITOR} = userTemplateKeys;
 // Create three users
 // rename the user templates to match our users
 // Once merged with the defaults remove the user template keys to make a flat object of users
-export default config => R.compose(R.mergeAll, R.values, mapDefaultUsers(config))(
+export default config => R.compose(
+  R.mergeAll,
+  R.values,
+  mapDefaultUsers(config.users)
+)(
   {
     [REGION_MANAGER]: {
       oaklandManager: {

@@ -21,7 +21,7 @@ import {reqPathThrowing} from 'rescape-ramda'
 import graph, {stages, stageKey, valueKey, locationKey, nodeNameKey} from './belgiumSankeySample'
 
 // merge the default region template with our region(s)
-export default config => applyDefaultRegion(config, {
+export default config => applyDefaultRegion(config.regions, {
   belgium: {
     id: 'belgium',
     name: 'Belgium',

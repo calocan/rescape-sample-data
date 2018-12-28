@@ -405,7 +405,6 @@ Object {
           "timestamp": "2017-04-04T17:49:02Z",
           "type": "FeatureCollection",
         },
-        "searches": Object {},
       },
       "geospatial": Object {
         "bounds": Array [
@@ -1841,6 +1840,7 @@ Object {
         ],
         "valueKey": "annualTonnage",
       },
+      "searches": Object {},
       "travel": Object {
         "journeys": Object {
           "current": null,
@@ -2250,7 +2250,6 @@ Object {
           "timestamp": "2017-04-04T17:49:02Z",
           "type": "FeatureCollection",
         },
-        "searches": Object {},
       },
       "geospatial": Object {
         "bounds": Array [
@@ -3054,6 +3053,7 @@ Object {
         },
       },
       "name": "Oakland",
+      "searches": Object {},
       "travel": Object {
         "journeys": Object {
           "current": "1487635143780",
@@ -3895,7 +3895,6 @@ Object {
           "timestamp": "2017-04-04T17:49:02Z",
           "type": "FeatureCollection",
         },
-        "searches": Object {},
       },
       "geospatial": Object {
         "bounds": Array [
@@ -4311,6 +4310,7 @@ Object {
         },
       },
       "name": "Paris",
+      "searches": Object {},
       "travel": Object {
         "journeys": Object {
           "current": "1487635143780",
@@ -4397,16 +4397,21 @@ Object {
   },
   "users": Object {
     "app_admin": Object {
-      "isActive": true,
-      "permissions": Array [
-        "administrate",
-      ],
-      "regions": Object {
-        "ids": Object {},
+      "sampleAdmin": Object {
+        "id": "sampleAdmin",
+        "name": "Ty Coon",
+        "permissions": Array [
+          "administrate",
+        ],
+        "regions": Object {
+          "ids": Object {},
+        },
+        "templateKey": "app_admin",
       },
     },
     "belgiumManager": Object {
       "id": "belgiumManager",
+      "isActive": true,
       "name": "Belgium Manager",
       "permissions": Array [
         "manage",
@@ -4417,6 +4422,7 @@ Object {
           "isSelected": true,
         },
       ],
+      "templateKey": "region_manager",
     },
     "belgiumUser": Object {
       "id": "belgiumUser",
@@ -4430,6 +4436,7 @@ Object {
           "isSelected": true,
         },
       ],
+      "templateKey": "region_user",
     },
     "belgiumVisitor": Object {
       "id": "belgiumVisitor",
@@ -4443,6 +4450,49 @@ Object {
           "isSelected": true,
         },
       ],
+      "templateKey": "region_visitor",
+    },
+    "oaklandManager": Object {
+      "id": "oaklandManager",
+      "name": "Libby Schaaf",
+      "permissions": Array [
+        "manage",
+      ],
+      "regions": Array [
+        Object {
+          "id": "oakland",
+          "isSelected": true,
+        },
+      ],
+      "templateKey": "region_manager",
+    },
+    "oaklandUser": Object {
+      "id": "oaklandUser",
+      "name": "Ryan Russo",
+      "permissions": Array [
+        "use",
+      ],
+      "regions": Array [
+        Object {
+          "id": "oakland",
+          "isSelected": true,
+        },
+      ],
+      "templateKey": "region_user",
+    },
+    "oaklandVisitor": Object {
+      "id": "oaklandVisitor",
+      "name": "Jeff Tumlin",
+      "permissions": Array [
+        "visit",
+      ],
+      "regions": Array [
+        Object {
+          "id": "oakland",
+          "isSelected": true,
+        },
+      ],
+      "templateKey": "region_visitor",
     },
     "parisManager": Object {
       "id": "parisManager",
@@ -4456,6 +4506,7 @@ Object {
           "isSelected": true,
         },
       ],
+      "templateKey": "region_manager",
     },
     "parisUser": Object {
       "id": "parisUser",
@@ -4469,6 +4520,7 @@ Object {
           "isSelected": true,
         },
       ],
+      "templateKey": "region_user",
     },
     "parisVisitor": Object {
       "id": "parisVisitor",
@@ -4482,24 +4534,7 @@ Object {
           "isSelected": true,
         },
       ],
-    },
-    "region_manager": Object {
-      "permissions": Array [
-        "manage",
-      ],
-      "regions": Object {},
-    },
-    "region_user": Object {
-      "permissions": Array [
-        "use",
-      ],
-      "regions": Object {},
-    },
-    "region_visitor": Object {
-      "permissions": Array [
-        "visit",
-      ],
-      "regions": Object {},
+      "templateKey": "region_visitor",
     },
   },
 }

@@ -32,30 +32,31 @@ export const permissions = {
 /*
   User templates. Merge one of these into a user configuration
 */
-export const users = {
-  [userTemplateKeys.APP_ADMIN]: {
+export const users = [
+  {
+    templateKey: userTemplateKeys.APP_ADMIN,
     // Admin access to application
     permissions: [permissions.ADMINISTRATE],
     regions: {
       ids: {}
     }
   },
-  [userTemplateKeys.REGION_MANAGER]: {
+  {
+    templateKey: userTemplateKeys.REGION_MANAGER,
     // Can manage regions listed in ids
     permissions: [permissions.MANAGE],
-    regions: {
-    }
+    regions: {}
   },
-  [userTemplateKeys.REGION_USER]: {
+  {
+    templateKey: userTemplateKeys.REGION_USER,
     // Can use regions listed in ids, creating projects, etc
     permissions: [permissions.USE],
-    regions: {
-    }
+    regions: {}
   },
-  [userTemplateKeys.REGION_VISITOR]: {
+  {
+    templateKey: userTemplateKeys.REGION_VISITOR,
     // Can use regions listed in ids, creating projects, etc
     permissions: [permissions.VISIT],
-    regions: {
-    }
+    regions: {}
   }
-};
+];
