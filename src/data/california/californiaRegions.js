@@ -18,6 +18,7 @@ import trips from './californiaTrips'
 import stops from './californiaStops'
 import osm from './californiaOsm'
 import {reqPathThrowing} from 'rescape-ramda'
+import {defaultRegion} from '../default/defaultConfig';
 
 export const NORTH_BAY = 'North-Bay';
 export const ALTAMONT = 'Altamont';
