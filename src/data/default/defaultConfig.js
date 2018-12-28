@@ -22,33 +22,7 @@ import {users} from './defaultUsers';
  */
 export const createDefaultConfig = config => mergeDeep(config, {
   regions: {
-    // The default region is a template to merge with other regions
-    default: {
-      gtfs: {
-        calendar: [
-          DEFAULT_SERVICE,
-          WEEKEND_SERVICE
-        ],
-        routeTypes: routeTypes
-      },
-      geojson: {
-      },
-      searches: {},
-      locations: {},
-      mapbox: {
-        mapStyle: 'mapbox://styles/mapbox/streets-v8',
-        viewport: {
-          pitch: 0,
-          bearing: 0,
-          startDragLngLat: null,
-          isDragging: false,
 
-          latitude: 0,
-          longitude: 0,
-          zoom: 1
-        }
-      }
-    }
   },
   // These are all just templates that can be merged with real users
   users,
@@ -58,3 +32,30 @@ export const createDefaultConfig = config => mergeDeep(config, {
     default: {}
   }
 });
+ // The default region is a template to merge with other regions
+export const defaultRegion = {
+  gtfs: {
+    calendar: [
+      DEFAULT_SERVICE,
+      WEEKEND_SERVICE
+    ],
+      routeTypes: routeTypes
+  },
+  geojson: {
+  },
+  searches: {},
+  locations: {},
+  mapbox: {
+    mapStyle: 'mapbox://styles/mapbox/streets-v8',
+      viewport: {
+      pitch: 0,
+        bearing: 0,
+        startDragLngLat: null,
+        isDragging: false,
+
+        latitude: 0,
+        longitude: 0,
+        zoom: 1
+    }
+  }
+}

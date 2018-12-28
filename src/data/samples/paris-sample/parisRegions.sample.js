@@ -18,13 +18,14 @@ import trips from './parisTrips.sample'
 import stops from './parisStops.sample'
 import osm from './parisOsm.sample'
 import {reqPathThrowing} from 'rescape-ramda'
+import {defaultRegion} from '../../default/defaultConfig';
 
 export const NORTH_BAY = 'North-Bay';
 export const ALTAMONT = 'Altamont';
 export const EAST_BAY = 'East-Bay';
 
 // merge the default region template with our region(s)
-export default config => applyDefaultRegion(config.regions, {
+export default config => applyDefaultRegion(defaultRegion, {
   paris: {
     id: 'paris',
     name: 'Paris',

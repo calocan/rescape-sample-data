@@ -24,7 +24,7 @@ export const ALTAMONT = 'Altamont';
 export const EAST_BAY = 'East-Bay';
 
 // merge the default region template with our region(s)
-export default config => applyDefaultRegion(config.regions, {
+export default config => applyDefaultRegion(defaultRegion, {
   california: {
     id: 'california',
     name: 'California',

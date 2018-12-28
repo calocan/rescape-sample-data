@@ -19,7 +19,6 @@ describe('config', () => {
   const sampleConfig = createSampleConfig(config);
   test('Contains merged configs', () => {
     expect(R.length(R.keys(sampleConfig.regions))).toEqual(3);
-    oaklandUsers(config)
     // 3 users per region plus the admin
     expect(R.length(R.keys(sampleConfig.users))).toEqual(10);
     // Make sure settings is in there

@@ -19,9 +19,10 @@ import stops from './belgiumStops'
 import osm from './belgiumOsm'
 import {reqPathThrowing} from 'rescape-ramda'
 import graph, {stages, stageKey, valueKey, locationKey, nodeNameKey} from './belgiumSankeySample'
+import {defaultRegion} from '../default/defaultConfig';
 
 // merge the default region template with our region(s)
-export default config => applyDefaultRegion(config.regions, {
+export default config => applyDefaultRegion(defaultRegion, {
   belgium: {
     id: 'belgium',
     name: 'Belgium',

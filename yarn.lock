@@ -6559,9 +6559,9 @@ requires-port@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/requires-port/-/requires-port-1.0.0.tgz#925d2601d39ac485e091cf0da5c6e694dc3dcaff"
 
-rescape-helpers@^1.1.76:
-  version "1.1.76"
-  resolved "https://registry.yarnpkg.com/rescape-helpers/-/rescape-helpers-1.1.76.tgz#94a436a11bbc33e13c75b7b5eccefa6073ffb167"
+rescape-helpers@^1.1.77:
+  version "1.1.77"
+  resolved "https://registry.yarnpkg.com/rescape-helpers/-/rescape-helpers-1.1.77.tgz#26371973403d3e0b32b1c886822eead4806fd182"
   dependencies:
     "@turf/bbox" "^6.0.1"
     "@turf/bbox-polygon" "^6.0.1"
