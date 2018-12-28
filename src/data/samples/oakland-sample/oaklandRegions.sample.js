@@ -32,9 +32,10 @@ export default config => applyDefaultRegion(config, {
 
     geojson: {
       osm,
-      // Make these the osm features for now
-      locations: reqPathThrowing(['features'], osm)
     },
+
+    // Make these the osm features for now
+    locations: reqPathThrowing(['features'], osm),
 
     gtfs: {
       routes,

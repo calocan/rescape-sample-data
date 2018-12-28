@@ -78,7 +78,7 @@ const Json = new GraphQLScalarType({
   parseLiteral: R.identity
 })
 
-// Copy of graphql-geojson FeatureObject but expects the propertis to be an object, not a json string
+// Copy of graphql-geojson FeatureObject but expects the properties to be an object, not a json string
 const FeatureObjectWithPropertiesAsObject = new GraphQLObjectType({
   name: 'geojsonFeature',
   description: 'An object that links a geometry to properties in order to provide context.',
@@ -99,8 +99,8 @@ const FeatureObjectWithPropertiesAsObject = new GraphQLObjectType({
  * These are resolved using resolvers, either in a test data environment or against running database
  */
 
-const OpenStreetMapType = new GraphQLObjectType({
-  name: 'OpenStreetMap',
+const GeojsonType = new GraphQLObjectType({
+  name: 'Geojson',
   fields: {
     type: {type: GraphQLString},
     generator: {type: GraphQLString},
@@ -176,14 +176,6 @@ const SankeyType = new GraphQLObjectType({
   }
 });
 
-const GeojsonType = new GraphQLObjectType({
-  name: 'Geojson',
-  fields: {
-    osm: {type: OpenStreetMapType},
-    locations: {type: new GraphQLList(LocationType)},
-    sankey: {type: SankeyType}
-  }
-});
 
 const BoundsType = new GraphQLObjectType({
   name: 'Bounds',
@@ -225,6 +217,8 @@ const RegionType = new GraphQLObjectType({
     name: {type: GraphQLString},
     description: {type: GraphQLString},
     geojson: {type: GeojsonType},
+    locations: {type: new GraphQLList(LocationType)},
+    sankey: {type: SankeyType},
     geospatial: {type: GeospatialType},
     mapbox: {type: MapboxType}
   })

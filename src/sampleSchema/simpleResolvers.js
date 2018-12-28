@@ -29,14 +29,11 @@ const makeSimpleResolvers = data => ({
   User: {
     //permissions: objectValues('permissions')
   },
-  OpenStreetMap: {
-    features: objectValues('features')
-  },
   Location: {
     features: objectValues('features')
   },
   Geojson: {
-    locations: objectValues('locations')
+    features: objectValues('features')
   },
   Bounds: {},
   Geospatial: {},

@@ -29,16 +29,18 @@ export default config => applyDefaultRegion(config, {
 
     geojson: {
       osm,
-      // Make these the osm features for now
-      locations: reqPathThrowing(['features'], osm),
-      sankey: {
-        graph,
-        stages,
-        stageKey,
-        valueKey,
-        locationKey,
-        nodeNameKey
-      }
+    },
+
+    // Make these the osm features for now
+    locations: reqPathThrowing(['features'], osm),
+
+    sankey: {
+      graph,
+      stages,
+      stageKey,
+      valueKey,
+      locationKey,
+      nodeNameKey
     },
 
     gtfs: {
