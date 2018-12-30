@@ -32,7 +32,7 @@ export const permissions = {
 /*
   User templates. Merge one of these into a user configuration
 */
-export const users = [
+export const templateUsers = [
   {
     templateKey: userTemplateKeys.APP_ADMIN,
     // Admin access to application

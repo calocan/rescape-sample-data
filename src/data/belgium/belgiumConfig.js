@@ -10,20 +10,17 @@
  */
 
 import {applyRegionsToUsers} from 'rescape-helpers';
-import {mergeDeep} from 'rescape-ramda';
-import belgiumRegions from './belgiumRegions'
-import users from './belgiumUsers'
+import regions from './belgiumRegions';
+import users from './belgiumUsers';
+import * as R from 'ramda';
 
 /**
  * Creates a sample config for Belgium from the given config
  * @param {Object} config Defaults to environments/testConfig. Contains general values
  * @return {Object} The sample config for Oakland
  */
-export const createBelgiumConfig = config => {
-  const regions = belgiumRegions(config);
-  return mergeDeep(config, {
-    regions: regions,
-    // Give each users all regions for simplicity
-    users: applyRegionsToUsers(regions, users(config))
-  });
-}
+export const belgiumConfig = {
+  regions,
+  // Give each users of each rol access to all regions for simplicity
+  users: R.map(applyRegionsToUsers(regions), users)
+};

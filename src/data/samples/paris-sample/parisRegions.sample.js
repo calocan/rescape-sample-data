@@ -13,19 +13,17 @@ import journeys from './parisJourneys.sample.js';
 import locations from './parisUserLocations.sample.js';
 import routes from './parisRoutes.sample'
 import * as routeTypes from '../../default/routeTypes';
-import {applyDefaultRegion} from 'rescape-helpers';
 import trips from './parisTrips.sample'
 import stops from './parisStops.sample'
 import osm from './parisOsm.sample'
 import {reqPathThrowing} from 'rescape-ramda'
-import {defaultRegion} from '../../default/defaultConfig';
 
 export const NORTH_BAY = 'North-Bay';
 export const ALTAMONT = 'Altamont';
 export const EAST_BAY = 'East-Bay';
 
 // merge the default region template with our region(s)
-export default config => applyDefaultRegion(defaultRegion, {
+export default {
   paris: {
     id: 'paris',
     name: 'Paris',
@@ -62,4 +60,4 @@ export default config => applyDefaultRegion(defaultRegion, {
       }
     }
   }
-});
+};

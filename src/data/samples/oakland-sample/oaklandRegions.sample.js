@@ -13,19 +13,17 @@ import journeys from './oaklandJourneys.sample.js';
 import locations from './oaklandUserLocations.sample.js';
 import routes from './oaklandRoutes.sample'
 import * as routeTypes from '../../default/routeTypes';
-import {applyDefaultRegion} from 'rescape-helpers';
 import trips from './oaklandTrips.sample'
 import stops from './oaklandStops.sample'
 import osm from './oaklandOsm.sample'
 import {reqPathThrowing} from 'rescape-ramda'
-import {defaultRegion} from '../../default/defaultConfig';
 
 export const NORTH_BAY = 'North-Bay';
 export const ALTAMONT = 'Altamont';
 export const EAST_BAY = 'East-Bay';
 
 // merge the default region template with our region(s)
-export default config => applyDefaultRegion(defaultRegion, {
+export default {
   oakland: {
     id: 'oakland',
     name: 'Oakland',
@@ -63,4 +61,4 @@ export default config => applyDefaultRegion(defaultRegion, {
       }
     }
   }
-});
+};

@@ -10,47 +10,50 @@
  */
 
 import * as R from 'ramda';
-import {createGlobalSampleConfig} from './global-sample/globalSampleConfig';
-import {createOaklandSampleConfig} from './oakland-sample/oaklandSampleConfig';
-import {createParisSampleConfig} from './paris-sample/parisSampleConfig';
-import {createBelgiumConfig} from '../belgium/belgiumConfig';
+import {globalSampleConfig} from './global-sample/globalSampleConfig';
+import {oaklandSampleConfig} from './oakland-sample/oaklandSampleConfig';
+import {parisSampleConfig} from './paris-sample/parisSampleConfig';
+import {belgiumConfig} from '../belgium/belgiumConfig';
 import {mergeDeepAll} from 'rescape-ramda';
-import {firstUserLens} from 'rescape-helpers';
 
 /**
  * Creates a sampleConfig with the given environment config
  * @param {Object} config Defaults to environments/testConfig
  * @return {Object} A complete sample config
  */
-export const createSampleConfig = config => {
-  const belgiumConfig = createBelgiumConfig(config);
-
-  return R.over(
-    // Remove default region
-    R.lensProp('regions'),
-    regions => R.omit(['default'], regions),
-    mergeDeepAll([
-      {
-        // Any settings that aren't Region specific.
-        styles: config.styles,
-        // Any browser settings that would normally be set externally by the browser
-        browser: {
-          width: 1080,
-          height: 720
-        }
+export const sampleConfig = mergeDeepAll([
+  {
+    settings: {
+      domain: 'localhost',
+      api: {
       },
-      createGlobalSampleConfig(config),
-      // Belgium Region
-      R.over(
-        // Make the first user of Belgium region active
-        firstUserLens(belgiumConfig),
-        R.merge({isActive: true}),
-        belgiumConfig
-      ),
-      // Oakland Region
-      createOaklandSampleConfig(config),
-      // Paris Region
-      createParisSampleConfig(config)
-    ])
-  )
-};
+      // Overpass API configuration to play nice with the server's strict throttling
+      overpass: {
+        cellSize: 100,
+        sleepBetweenCalls: 1000
+      },
+      markers: {},
+      mapbox: {
+        // This will probably not be used unless we need to cluster something on the map
+        iconAtlas: 'data/location-icon-atlas.png',
+        // ditto
+        showCluster: true,
+        showZoomControls: true,
+        // Universal Mapbox parameters to apply to any mapbox instance
+        preventStyleDiffing: false
+      }
+    },
+      // Any browser settings that would normally be set externally by the browser
+    browser: {
+      width: 1080,
+      height: 720
+    }
+  },
+  globalSampleConfig,
+  belgiumConfig,
+
+  // Oakland Region
+  oaklandSampleConfig,
+  // Paris Region
+  parisSampleConfig
+]);

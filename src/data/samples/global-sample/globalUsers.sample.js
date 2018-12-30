@@ -15,7 +15,7 @@ import {mapDefaultUsers} from 'rescape-helpers';
 const {APP_ADMIN} = userTemplateKeys;
 
 // Create an admin user
-// rename the user templates to match our users
+// rename the user templates to match our templateUsers
 export default config => mapDefaultUsers(config.users,
   {
     [APP_ADMIN]: {

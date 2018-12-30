@@ -10,12 +10,14 @@
  */
 
 import * as R from 'ramda';
-import {mergeDeep} from 'rescape-ramda';
+import {mergeDeep, reqStrPathThrowing, mergeDeepWithConcatArrays} from 'rescape-ramda';
 // I think rollup lets imports be null if not defined, in case any of these are not included in a production build
 // https://github.com/rollup/rollup/pull/1342
-import {createSampleConfig} from '../samples/sampleConfig';
-import {createCaliforniaConfig} from '../california/californiaConfig';
-import {createDefaultConfig} from '../default/defaultConfig';
+import {sampleConfig} from '../samples/sampleConfig';
+import {templateRegion} from '../default/templateRegion';
+import {applyDefaultRegion, mapDefaultUsers, parseApiUrl} from 'rescape-helpers';
+import {firstUserLens} from 'rescape-helpers';
+import {templateUsers} from '../default/templateUsers';
 
 const environment = process.env.NODE_ENV;
 
@@ -28,21 +30,50 @@ const environment = process.env.NODE_ENV;
  * If production throws an error
  */
 export const getCurrentConfig = (config, env = environment) => {
-  // Add the defaultConfig to the given config. This gives us default settings
-  // and template user and regions that are used to configure real users and regions
-  const configWithDefaults = createDefaultConfig(config);
-  return R.cond(
-    [
-      [R.equals('test'), () => createSampleConfig(configWithDefaults)],
-      [R.equals('development'), () => createCaliforniaConfig(configWithDefaults)],
-      [R.equals('production'), () => {
-        throw new Error('No production environment is implemented');
-      }],
+  // Deep merge the given config with sampleConfig
+  const envConfig = mergeDeepWithConcatArrays(
+    R.cond([
+      [R.equals('test'), R.always(sampleConfig)],
+      [R.equals('dev'), R.always(sampleConfig)],
       [R.T, () => {
-        throw new Error('No known environment was specified in env.js');
+        throw new Error('Only test and dev NODE_ENV supported');
       }]
-    ]
-  )(env);
+    ])(env), config);
+
+  // Process the config, applying templates, computing required values, and setting defaults
+  return R.compose(
+    // Make the first user the active user
+    R.over(
+      R.lensPath(['users', 0]),
+      R.merge({isActive: true})
+    ),
+    // Apply default region to regions
+    R.over(
+      R.lensProp('regions'),
+      R.compose(
+        // Take values of regions, we don't need the keys
+        R.unless(R.is(Array), R.values),
+        applyDefaultRegion(templateRegion)
+      )
+    ),
+    // Map the default templateUsers to user then flatten the results
+    R.over(
+      R.lensProp('users'),
+      R.compose(
+        // Once we apply templateUsers remove the template keys and flatten
+        // If users are in objects remove the keys now
+        R.chain(R.unless(R.is(Array), R.values)),
+        // Remove the users role keys
+        R.values,
+        mapDefaultUsers(templateUsers)
+      )
+    ),
+    // Set up the api uri from the parts
+    R.over(
+      R.lensPath(['settings', 'api']),
+      obj => R.merge(obj, {uri: parseApiUrl(obj)})
+    )
+  )(envConfig);
 };
 
 /**

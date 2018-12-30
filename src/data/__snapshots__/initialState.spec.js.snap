@@ -6,8 +6,8 @@ Object {
     "height": 720,
     "width": 1080,
   },
-  "regions": Object {
-    "belgium": Object {
+  "regions": Array [
+    Object {
       "description": "Country of Belgium",
       "geojson": Object {
         "osm": Object {
@@ -1852,7 +1852,7 @@ Object {
         "locations": Array [],
       },
     },
-    "oakland": Object {
+    Object {
       "description": "Hella Oaklandish",
       "geojson": Object {
         "osm": Object {
@@ -3108,7 +3108,7 @@ Object {
         ],
       },
     },
-    "paris": Object {
+    Object {
       "description": "C'est la ville la plus fameuse",
       "geojson": Object {
         "locations": Array [
@@ -4365,18 +4365,14 @@ Object {
         ],
       },
     },
-  },
+  ],
   "settings": Object {
     "api": Object {
       "host": "localhost",
+      "path": "/graphql/",
       "port": "8000",
       "protocol": "http",
-      "root": "/graphql/",
-    },
-    "cycle": Object {
-      "drivers": Object {
-        "api": "HTTP",
-      },
+      "uri": "http://localhost:8000/graphql/",
     },
     "domain": "localhost",
     "mapbox": Object {
@@ -4392,24 +4388,9 @@ Object {
       "sleepBetweenCalls": 1000,
     },
   },
-  "styles": Object {
-    "default": Object {},
-  },
-  "users": Object {
-    "app_admin": Object {
-      "sampleAdmin": Object {
-        "id": "sampleAdmin",
-        "name": "Ty Coon",
-        "permissions": Array [
-          "administrate",
-        ],
-        "regions": Object {
-          "ids": Object {},
-        },
-        "templateKey": "app_admin",
-      },
-    },
-    "belgiumManager": Object {
+  "styles": undefined,
+  "users": Array [
+    Object {
       "id": "belgiumManager",
       "isActive": true,
       "name": "Belgium Manager",
@@ -4424,35 +4405,7 @@ Object {
       ],
       "templateKey": "region_manager",
     },
-    "belgiumUser": Object {
-      "id": "belgiumUser",
-      "name": "Belgium User",
-      "permissions": Array [
-        "use",
-      ],
-      "regions": Array [
-        Object {
-          "id": "belgium",
-          "isSelected": true,
-        },
-      ],
-      "templateKey": "region_user",
-    },
-    "belgiumVisitor": Object {
-      "id": "belgiumVisitor",
-      "name": "Belgium Visitor",
-      "permissions": Array [
-        "visit",
-      ],
-      "regions": Array [
-        Object {
-          "id": "belgium",
-          "isSelected": true,
-        },
-      ],
-      "templateKey": "region_visitor",
-    },
-    "oaklandManager": Object {
+    Object {
       "id": "oaklandManager",
       "name": "Libby Schaaf",
       "permissions": Array [
@@ -4466,35 +4419,7 @@ Object {
       ],
       "templateKey": "region_manager",
     },
-    "oaklandUser": Object {
-      "id": "oaklandUser",
-      "name": "Ryan Russo",
-      "permissions": Array [
-        "use",
-      ],
-      "regions": Array [
-        Object {
-          "id": "oakland",
-          "isSelected": true,
-        },
-      ],
-      "templateKey": "region_user",
-    },
-    "oaklandVisitor": Object {
-      "id": "oaklandVisitor",
-      "name": "Jeff Tumlin",
-      "permissions": Array [
-        "visit",
-      ],
-      "regions": Array [
-        Object {
-          "id": "oakland",
-          "isSelected": true,
-        },
-      ],
-      "templateKey": "region_visitor",
-    },
-    "parisManager": Object {
+    Object {
       "id": "parisManager",
       "name": "Paris Manager",
       "permissions": Array [
@@ -4508,7 +4433,35 @@ Object {
       ],
       "templateKey": "region_manager",
     },
-    "parisUser": Object {
+    Object {
+      "id": "belgiumUser",
+      "name": "Belgium User",
+      "permissions": Array [
+        "use",
+      ],
+      "regions": Array [
+        Object {
+          "id": "belgium",
+          "isSelected": true,
+        },
+      ],
+      "templateKey": "region_user",
+    },
+    Object {
+      "id": "oaklandUser",
+      "name": "Ryan Russo",
+      "permissions": Array [
+        "use",
+      ],
+      "regions": Array [
+        Object {
+          "id": "oakland",
+          "isSelected": true,
+        },
+      ],
+      "templateKey": "region_user",
+    },
+    Object {
       "id": "parisUser",
       "name": "Paris User",
       "permissions": Array [
@@ -4522,7 +4475,35 @@ Object {
       ],
       "templateKey": "region_user",
     },
-    "parisVisitor": Object {
+    Object {
+      "id": "belgiumVisitor",
+      "name": "Belgium Visitor",
+      "permissions": Array [
+        "visit",
+      ],
+      "regions": Array [
+        Object {
+          "id": "belgium",
+          "isSelected": true,
+        },
+      ],
+      "templateKey": "region_visitor",
+    },
+    Object {
+      "id": "oaklandVisitor",
+      "name": "Jeff Tumlin",
+      "permissions": Array [
+        "visit",
+      ],
+      "regions": Array [
+        Object {
+          "id": "oakland",
+          "isSelected": true,
+        },
+      ],
+      "templateKey": "region_visitor",
+    },
+    Object {
       "id": "parisVisitor",
       "name": "Paris Visitor",
       "permissions": Array [
@@ -4536,6 +4517,6 @@ Object {
       ],
       "templateKey": "region_visitor",
     },
-  },
+  ],
 }
 `;

@@ -57,7 +57,7 @@
     "ramda-lens": "^0.1.2",
     "regenerator-runtime": "^0.12.0",
     "rescape-helpers": "^1.1.77",
-    "rescape-ramda": "^1.4.51",
+    "rescape-ramda": "^1.5.9",
     "rescape-validate": "^1.2.10"
   },
   "devDependencies": {

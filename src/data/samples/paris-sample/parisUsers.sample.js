@@ -20,34 +20,30 @@
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-import { userTemplateKeys} from '../../default/index';
-import {mapDefaultUsers} from 'rescape-helpers';
-import * as R from 'ramda';
+import {userTemplateKeys} from '../../default/index';
 
 const {REGION_MANAGER, REGION_USER, REGION_VISITOR} = userTemplateKeys;
 
-// Create three users
-// rename the user templates to match our users
-// Once merged with the defaults remove the user template keys to make a flat object of users
-export default config => R.mergeAll(R.values(mapDefaultUsers(config.users,
-  {
-    [REGION_MANAGER]: {
-      parisManager: {
-        id: 'parisManager',
-        name: 'Paris Manager'
-      }
-    },
-    [REGION_USER]: {
-      parisUser: {
-        id: 'parisUser',
-        name: 'Paris User'
-      }
-    },
-    [REGION_VISITOR]: {
-      parisVisitor: {
-        id: 'parisVisitor',
-        name: 'Paris Visitor'
-      }
+// Create three templateUsers
+// rename the user templates to match our templateUsers
+// Once merged with the defaults remove the user template keys to make a flat object of templateUsers
+export default {
+  [REGION_MANAGER]: {
+    parisManager: {
+      id: 'parisManager',
+      name: 'Paris Manager'
+    }
+  },
+  [REGION_USER]: {
+    parisUser: {
+      id: 'parisUser',
+      name: 'Paris User'
+    }
+  },
+  [REGION_VISITOR]: {
+    parisVisitor: {
+      id: 'parisVisitor',
+      name: 'Paris Visitor'
     }
   }
-)));
+};

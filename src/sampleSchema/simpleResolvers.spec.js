@@ -10,18 +10,15 @@
  */
 
 import {sampleSimpleResolvedSchema} from './simpleResolvers';
-import {createSampleConfig} from '../data/samples/sampleConfig';
 import {graphql} from 'graphql';
 import * as R from 'ramda';
 import {mapped} from 'ramda-lens';
 import privateConfig from '../privateConfig'
-import {createDefaultConfig} from '../data/default'
+import {getCurrentConfig} from '../data/current';
 
 describe('mockExecutableSchema', () => {
-  const config = createDefaultConfig(privateConfig);
-  const sampleConfig = createSampleConfig(config);
   test('sampleSimpleResolvedSchema', async () => {
-    expect(sampleSimpleResolvedSchema(config)).toMatchSnapshot();
+    expect(sampleSimpleResolvedSchema(privateConfig)).toMatchSnapshot();
     const query = `
         query allRegions {
             regions {
@@ -32,11 +29,11 @@ describe('mockExecutableSchema', () => {
 
     const schemaRegionLens = R.compose(R.lensPath(['data', 'regions'], mapped, R.lensProp('id')));
     const sampleRegionLens = R.compose(R.lensPath(['regions'], mapped, R.lensProp('id')));
-    const regions = await graphql(sampleSimpleResolvedSchema(config), query).then(
+    const regions = await graphql(sampleSimpleResolvedSchema(privateConfig), query).then(
       result => R.view(schemaRegionLens, result)
     );
     expect(regions).toEqual(
-      R.map(R.pick(['id']), R.values(R.view(sampleRegionLens, sampleConfig)))
+      R.map(R.pick(['id']), R.values(R.view(sampleRegionLens, getCurrentConfig(privateConfig))))
     );
   });
 });

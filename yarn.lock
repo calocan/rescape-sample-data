@@ -6606,20 +6606,21 @@ rescape-ramda@^1.4.50:
     ramda-maybe "^0.18.0"
     util "^0.11.0"
 
-rescape-ramda@^1.4.51:
-  version "1.4.51"
-  resolved "https://registry.yarnpkg.com/rescape-ramda/-/rescape-ramda-1.4.51.tgz#3ff4ee542d23d5e8311168f61298ae3c11a4fe5d"
+rescape-ramda@^1.4.88:
+  version "1.5.8"
+  resolved "https://registry.yarnpkg.com/rescape-ramda/-/rescape-ramda-1.5.8.tgz#6f3be6c624102527f6f45819df11ef4d91f054fb"
   dependencies:
-    folktale "^2.1.0"
-    fs-extra "^6.0.1"
+    folktale "^2.3.0"
+    fs-extra "^7.0.0"
+    namedtuplemap "^1.0.0"
     ramda "^0.25.0"
     ramda-fantasy "^0.8.0"
     ramda-maybe "^0.18.0"
     util "^0.11.0"
 
-rescape-ramda@^1.4.88:
-  version "1.5.8"
-  resolved "https://registry.yarnpkg.com/rescape-ramda/-/rescape-ramda-1.5.8.tgz#6f3be6c624102527f6f45819df11ef4d91f054fb"
+rescape-ramda@^1.5.9:
+  version "1.5.9"
+  resolved "https://registry.yarnpkg.com/rescape-ramda/-/rescape-ramda-1.5.9.tgz#e74c24c6a03caa08eec8015b1f020113babd81a4"
   dependencies:
     folktale "^2.3.0"
     fs-extra "^7.0.0"

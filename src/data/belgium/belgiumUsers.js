@@ -10,31 +10,28 @@
  */
 
 import {userTemplateKeys} from '../default/index';
-import {mapDefaultUsers} from 'rescape-helpers';
-import * as R from 'ramda';
+
 const {REGION_MANAGER, REGION_USER, REGION_VISITOR} = userTemplateKeys;
 
-// Create three users
-// rename the user templates to match our users
-export default config => R.mergeAll(R.values(mapDefaultUsers(config.users,
-  {
-    [REGION_MANAGER]: {
-      belgiumManager: {
-        id: 'belgiumManager',
-        name: 'Belgium Manager'
-      }
-    },
-    [REGION_USER]: {
-      belgiumUser: {
-        id: 'belgiumUser',
-        name: 'Belgium User'
-      }
-    },
-    [REGION_VISITOR]: {
-      belgiumVisitor: {
-        id: 'belgiumVisitor',
-        name: 'Belgium Visitor'
-      }
+// Create three templateUsers
+// rename the user templates to match our templateUsers
+export default {
+  [REGION_MANAGER]: {
+    belgiumManager: {
+      id: 'belgiumManager',
+      name: 'Belgium Manager'
+    }
+  },
+  [REGION_USER]: {
+    belgiumUser: {
+      id: 'belgiumUser',
+      name: 'Belgium User'
+    }
+  },
+  [REGION_VISITOR]: {
+    belgiumVisitor: {
+      id: 'belgiumVisitor',
+      name: 'Belgium Visitor'
     }
   }
-)));
+};

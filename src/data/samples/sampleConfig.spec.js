@@ -9,18 +9,13 @@
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 import * as R from 'ramda';
-import {createSampleConfig} from './sampleConfig';
-import privateConfig from '../../privateConfig';
-import {createDefaultConfig} from '../default';
-import oaklandUsers from '../samples/oakland-sample/oaklandUsers.sample'
+import {sampleConfig} from './sampleConfig';
 
 describe('config', () => {
-  const config = createDefaultConfig(privateConfig);
-  const sampleConfig = createSampleConfig(config);
   test('Contains merged configs', () => {
     expect(R.length(R.keys(sampleConfig.regions))).toEqual(3);
-    // 3 users per region plus the admin
-    expect(R.length(R.keys(sampleConfig.users))).toEqual(10);
+    // 3 templateUsers per region plus the admin
+    expect(R.length(R.chain(R.values, R.values(sampleConfig.users)))).toEqual(9);
     // Make sure settings is in there
     expect(R.keys(R.pick(['mapbox', 'domain', 'api'], sampleConfig.settings))).toEqual(['mapbox', 'domain', 'api']);
   });

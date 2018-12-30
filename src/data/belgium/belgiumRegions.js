@@ -11,25 +11,23 @@
 
 import journeys from './belgiumJourneys.js';
 import locations from './belgiumUserLocations.js';
-import routes from './belgiumRoutes'
+import routes from './belgiumRoutes';
 import * as routeTypes from '../default/routeTypes';
-import {applyDefaultRegion} from 'rescape-helpers';
-import trips from './belgiumTrips'
-import stops from './belgiumStops'
-import osm from './belgiumOsm'
-import {reqPathThrowing} from 'rescape-ramda'
-import graph, {stages, stageKey, valueKey, locationKey, nodeNameKey} from './belgiumSankeySample'
-import {defaultRegion} from '../default/defaultConfig';
+import trips from './belgiumTrips';
+import stops from './belgiumStops';
+import osm from './belgiumOsm';
+import {reqPathThrowing} from 'rescape-ramda';
+import graph, {stages, stageKey, valueKey, locationKey, nodeNameKey} from './belgiumSankeySample';
 
 // merge the default region template with our region(s)
-export default config => applyDefaultRegion(defaultRegion, {
+export default {
   belgium: {
     id: 'belgium',
     name: 'Belgium',
     description: 'Country of Belgium',
 
     geojson: {
-      osm,
+      osm
     },
 
     // Make these the osm features for now
@@ -67,7 +65,7 @@ export default config => applyDefaultRegion(defaultRegion, {
         longitude: 2.0165,
         zoom: 7
       }
-    },
+    }
 
   }
-});
+};
