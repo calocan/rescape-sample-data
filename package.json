@@ -1,6 +1,6 @@
 {
   "name": "rescape-sample-data",
-  "version": "1.2.45",
+  "version": "1.2.46",
   "description": "Sample data for rescape applications",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -110,9 +110,6 @@
     "webpack-dev-server": "3.1.5",
     "webpack-manifest-plugin": "2.0.3",
     "whatwg-fetch": "2.0.4"
-  },
-  "peerDependencies": {
-    "graphql": "^0.13.1"
   },
   "jest": {
     "setupTestFrameworkScriptFile": "<rootDir>/jestsetup.js",
