@@ -15,7 +15,7 @@ import routes from './parisRoutes.sample'
 import * as routeTypes from '../../default/routeTypes';
 import trips from './parisTrips.sample'
 import stops from './parisStops.sample'
-import osm from './parisOsm.sample'
+import geojson from './parisOsm.sample'
 import {reqPathThrowing} from 'rescape-ramda'
 
 export const NORTH_BAY = 'North-Bay';
@@ -29,11 +29,9 @@ export default {
     name: 'Paris',
     description: "C'est la ville la plus fameuse",
 
-    geojson: {
-      osm,
-      // Make these the same as osm features for now
-      locations: reqPathThrowing(['features'], osm)
-    },
+    geojson,
+    // Make these the osm features for now until we have real locations
+    locations: reqPathThrowing(['features'], geojson),
 
     gtfs: {
       routes,

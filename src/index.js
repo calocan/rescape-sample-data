@@ -12,8 +12,8 @@
 export {belgiumConfig} from './data/belgium/index';
 export {createCaliforniaConfig} from './data/california/index';
 export {getCurrentConfig, currentConfigResolver} from './data/current/index';
-export {createDefaultConfig, userTemplateKeys, permissions} from './data/default/index';
-export {createSampleConfig} from './data/samples/index';
+export {userTemplateKeys, permissions} from './data/default/index';
+export {sampleConfig} from './data/samples/sampleConfig';
 export {stopResolver, routeResolver, tripResolver} from './data/dataQueryHelpers';
 export {
   createTrip, createStopTimes, createRouteId, orderStops, createRoute, createService, createStop,
@@ -21,6 +21,6 @@ export {
   FROM_TO_DIRECTION, TO_FROM_DIRECTION
 } from './data/dataCreationHelpers';
 export {default as createInitialState} from './data/initialState';
-export {createSimpleResolvedSchema} from './sampleSchema/simpleResolvers'
-export {default as createSchema} from './sampleSchema/schema'
-export {default as privateConfig } from './privateConfig'
+export {createSimpleResolvedSchema} from './sampleSchema/simpleResolvers';
+export {default as createSchema} from './sampleSchema/schema';
+export {default as privateConfig} from './privateConfig';

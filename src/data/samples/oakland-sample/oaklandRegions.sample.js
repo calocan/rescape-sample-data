@@ -15,7 +15,7 @@ import routes from './oaklandRoutes.sample'
 import * as routeTypes from '../../default/routeTypes';
 import trips from './oaklandTrips.sample'
 import stops from './oaklandStops.sample'
-import osm from './oaklandOsm.sample'
+import geojson from './oaklandOsm.sample'
 import {reqPathThrowing} from 'rescape-ramda'
 
 export const NORTH_BAY = 'North-Bay';
@@ -29,12 +29,9 @@ export default {
     name: 'Oakland',
     description: 'Hella Oaklandish',
 
-    geojson: {
-      osm,
-    },
-
-    // Make these the osm features for now
-    locations: reqPathThrowing(['features'], osm),
+    geojson,
+    // Make these the osm features for now until we have real locations
+    locations: reqPathThrowing(['features'], geojson),
 
     gtfs: {
       routes,

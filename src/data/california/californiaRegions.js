@@ -15,7 +15,7 @@ import routes from './californiaRoutes'
 import * as routeTypes from '../default/routeTypes';
 import trips from './californiaTrips'
 import stops from './californiaStops'
-import osm from './californiaOsm'
+import geojson from './californiaOsm'
 import {reqPathThrowing} from 'rescape-ramda'
 
 export const NORTH_BAY = 'North-Bay';
@@ -29,11 +29,9 @@ export default {
     name: 'California',
     description: 'Poppy golden poppy',
 
-    geojson: {
-      osm,
-      // Make these the osm features for now
-      locations: reqPathThrowing(['features'], osm)
-    },
+    geojson,
+    // Make these the osm features for now until we have real locations
+    locations: reqPathThrowing(['features'], geojson),
 
     gtfs: {
       routes,

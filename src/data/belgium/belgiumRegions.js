@@ -15,7 +15,7 @@ import routes from './belgiumRoutes';
 import * as routeTypes from '../default/routeTypes';
 import trips from './belgiumTrips';
 import stops from './belgiumStops';
-import osm from './belgiumOsm';
+import geojson from './belgiumOsm';
 import {reqPathThrowing} from 'rescape-ramda';
 import graph, {stages, stageKey, valueKey, locationKey, nodeNameKey} from './belgiumSankeySample';
 
@@ -26,12 +26,9 @@ export default {
     name: 'Belgium',
     description: 'Country of Belgium',
 
-    geojson: {
-      osm
-    },
-
-    // Make these the osm features for now
-    locations: reqPathThrowing(['features'], osm),
+    geojson,
+    // Make these the osm features for now until we have real locations
+    locations: reqPathThrowing(['features'], geojson),
 
     sankey: {
       graph,
