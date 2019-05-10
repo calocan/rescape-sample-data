@@ -47,6 +47,10 @@ export const sampleConfig = mergeDeepAll([
     browser: {
       width: 1080,
       height: 720
+    },
+    // Required value
+    styles: {
+      default: {}
     }
   },
   globalSampleConfig,

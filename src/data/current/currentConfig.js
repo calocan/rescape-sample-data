@@ -10,13 +10,12 @@
  */
 
 import * as R from 'ramda';
-import {mergeDeep, reqStrPathThrowing, mergeDeepWithConcatArrays} from 'rescape-ramda';
+import {mergeDeep, mergeDeepWithConcatArrays} from 'rescape-ramda';
 // I think rollup lets imports be null if not defined, in case any of these are not included in a production build
 // https://github.com/rollup/rollup/pull/1342
 import {sampleConfig} from '../samples/sampleConfig';
 import {templateRegion} from '../default/templateRegion';
 import {applyDefaultRegion, mapDefaultUsers, parseApiUrl} from 'rescape-helpers';
-import {firstUserLens} from 'rescape-helpers';
 import {templateUsers} from '../default/templateUsers';
 
 const environment = process.env.NODE_ENV;
@@ -35,9 +34,7 @@ export const getCurrentConfig = (config, env = environment) => {
     R.cond([
       [R.equals('test'), R.always(sampleConfig)],
       [R.equals('dev'), R.always(sampleConfig)],
-      [R.T, () => {
-        throw new Error('Only test and dev NODE_ENV supported');
-      }]
+      [R.T, R.always(sampleConfig)]
     ])(env), config);
 
   // Process the config, applying templates, computing required values, and setting defaults
