@@ -1,6 +1,6 @@
 {
   "name": "rescape-sample-data",
-  "version": "1.2.56",
+  "version": "1.2.57",
   "description": "Sample data for rescape applications",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -53,8 +53,8 @@
     "ramda-lens": "^0.1.2",
     "regenerator-runtime": "^0.13.3",
     "rescape-helpers": "^1.1.84",
-    "rescape-ramda": "^1.5.64",
-    "rescape-validate": "^1.2.21"
+    "rescape-ramda": "^1.5.69",
+    "rescape-validate": "^1.2.24"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
