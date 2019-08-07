@@ -40,6 +40,7 @@ const makeSimpleResolvers = data => ({
   Viewport: {},
   Mapbox: {},
   Region: {
+    // eslint-disable-next-line no-unused-vars
     name(obj, args) {
       return obj.name;
     }
@@ -50,8 +51,11 @@ const makeSimpleResolvers = data => ({
   Settings: {},
   Query: {
     // These all ignore the query args and just return everything stupidly
+    // eslint-disable-next-line no-unused-vars
     regions: (obj, args) => objectValues('regions')(data),
+    // eslint-disable-next-line no-unused-vars
     users:  (obj, args) => objectValues('users')(data),
+    // eslint-disable-next-line no-unused-vars
     settings: (obj, args) => objectValues('settings')(data)
   }
   /*

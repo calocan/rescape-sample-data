@@ -27,6 +27,7 @@ describe('createSchema', () => {
         }
     `;
 
+    // eslint-disable-next-line no-unused-vars
     graphql(createSchema(), query).then(result => {
       expect(R.length(reqStrPathThrowing('data.regions'))).toEqual(1);
       done();

@@ -245,6 +245,7 @@ const OperationType = new GraphQLObjectType({
   })
 });
 
+// eslint-disable-next-line no-unused-vars
 const PermissionType = new GraphQLObjectType({
   name: 'Permission',
   fields: R.merge(idFieldObj, {

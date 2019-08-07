@@ -18,6 +18,7 @@ import {templateRegion} from '../default/templateRegion';
 import {applyDefaultRegion, mapDefaultUsers, parseApiUrl} from 'rescape-helpers';
 import {templateUsers} from '../default/templateUsers';
 
+// eslint-disable-next-line no-undef
 const environment = process.env.NODE_ENV;
 
 /**
