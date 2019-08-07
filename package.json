@@ -1,6 +1,6 @@
 {
   "name": "rescape-sample-data",
-  "version": "1.2.57",
+  "version": "1.2.58",
   "description": "Sample data for rescape applications",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -20,11 +20,6 @@
     "test:cov": "yarn test -- --coverage",
     "build": "rollup -c",
     "prepare": "yarn run clean && yarn run lint && yarn run build",
-    "docs:clean": "rimraf _book",
-    "docs:prepare": "gitbook install",
-    "docs:build": "yarn run docs:prepare && gitbook build -g reactjs/redux && cp logo/apple-touch-icon.png _book/gitbook/images/apple-touch-icon-precomposed-152.png && cp logo/favicon.ico _book/gitbook/images",
-    "docs:watch": "yarn run docs:prepare && gitbook serve",
-    "docs:publish": "yarn run docs:clean && yarn run docs:build && cp CNAME _book && cd _book && git init && git commit --allow-empty -m 'update book' && git checkout -b gh-pages && touch .nojekyll && git add . && git commit -am 'update book' && git push git@github.com:reactjs/redux gh-pages --force",
     "build-publish-patch": "yarn run build && yarn run publish-patch",
     "build-publish-minor": "yarn run build && yarn run publish-minor",
     "publish-patch": "yarn --new-version version patch && yarn publish",
@@ -75,13 +70,10 @@
     "cross-env": "^5.2.0",
     "dotenv": "8.0.0",
     "eslint": "6.1.0",
-    "eslint-config-react-app": "^4.0.1",
     "eslint-loader": "2.2.1",
     "eslint-plugin-flowtype": "3.13.0",
     "eslint-plugin-import": "2.18.2",
-    "eslint-plugin-jsx-a11y": "6.2.3",
-    "eslint-plugin-react": "^7.14.3",
-    "eslint-plugin-react-hooks": "^1.6.1",
+    "eslint-plugin-jest": "^22.14.1",
     "extract-text-webpack-plugin": "3.0.2",
     "file-loader": "4.1.0",
     "fs-extra": "8.1.0",
@@ -89,7 +81,6 @@
     "jest": "24.8.0",
     "jest-cli": "^24.8.0",
     "promise": "8.0.3",
-    "react-dev-utils": "^9.0.1",
     "redux-devtools-extension": "^2.13.8",
     "rollup": "^1.19.3",
     "rollup-plugin-babel": "^4.3.3",
@@ -133,9 +124,6 @@
     "transformIgnorePatterns": [
       "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs)$"
     ],
-    "moduleNameMapper": {
-      "^react-native$": "react-native-web"
-    },
     "moduleFileExtensions": [
       "web.js",
       "js",
@@ -169,8 +157,5 @@
         ]
       }
     }
-  },
-  "eslintConfig": {
-    "extends": "react-app"
   }
 }
